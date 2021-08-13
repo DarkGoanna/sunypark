@@ -1,0 +1,158 @@
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+  background: transparent;
+  width: 200px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000;
+}
+
+.btn:hover,
+.btn:active {
+  transition: .2s;
+}
+
+.container {
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.alignright {
+  float: right;
+  margin-left: 50px;
+  margin-bottom: 25px;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
+
+.scrollOff {
+  overflow-y: hidden;
+}
+
+.bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pt {
+  padding-top: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  line-height: 1.2;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'font', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: #fff;
+  color: #000;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background: #fff;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  outline: none;
+  font-family: inherit, sans-serif;
+}
+
+.seo h1,
+.seo h2,
+.seo h3,
+.seo h4,
+.seo h5,
+.seo h6 {
+  text-align: center;
+}
+
+.seo h1 {
+  margin-bottom: 25px;
+}
+
+.seo h2,
+.seo h3 {
+  margin-bottom: 20px;
+}
+
+.seo h4,
+.seo h5,
+.seo h6 {
+  margin-bottom: 15px;
+}
+
+.seo__text {
+  max-height: 10000px;
+}
+
+.seo__text.less {
+  max-height: var(--height);
+  transition: .2s;
+  overflow: hidden;
+  position: relative;
+}
+
+.seo__text.less::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 100%);
+}
+
+.seo__btn {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 580px) {
+  body {
+    font-size: 16px;
+  }
+}
