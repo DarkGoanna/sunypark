@@ -1,70 +1,139 @@
-// добавляем кнопки раскрытия подменю
-const menuItemWithSubmenu = document.querySelectorAll('.menu-item-has-children');
-menuItemWithSubmenu.forEach(item => {
-    if (item.lastElementChild.className !== 'menu__arrow') {
-        item.insertAdjacentHTML('beforeend', '<span class="menu__arrow"></span>');
-    }
+
+'use strict';
+const html = document.documentElement;
+const header = document.querySelector('.header');
+const headerRow_1 = document.querySelector('.header__row_1');
+const headerRow_2 = document.querySelector('.header__row_2');
+const menu = document.querySelector('.header__menu');
+const menuList = menu.querySelector('.menu');
+const burger = document.querySelector('.header__burger');
+const desktopBreakpoint = 768;
+
+// burger button
+burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    menu.classList.toggle('open');
+    // fixHeaderHeight();
+    menuList.classList.remove('show-sub-menu');
 });
 
-
-// открытие подменю
-function openSubmenu(event) {
-    if (event.target.className === 'menu__arrow') {
-        event.target.parentElement.classList.toggle('active');
-    }
+function addMenuArrow() {
+    const menuArrow = '<button type="button" class="menu__arrow"></button>';
+    menu.querySelectorAll('.menu-item-has-children').forEach(item => {
+        item.insertAdjacentHTML('beforeend', menuArrow);
+    });
 }
 
-// меню
-const burger = document.querySelector('.header__burger');
-burger.addEventListener('click', () => {
-    document.querySelector('html').classList.toggle('scrollOff');
-    burger.classList.toggle('open');
+function setIterationVar () {
+    menu.querySelectorAll('.menu > li').forEach((item, i) => {
+        item.style.setProperty('--i', i);
+    });
+}
 
-    // открываем/закрываем меню
-    burger.closest('.header__nav').classList.toggle('open');
+function addButtonComeback () {
+    const comebackButton = '<button type="button" class="menu__comeback">Назад</button>';
+    document.querySelectorAll('.sub-menu').forEach(submenu => {
+        submenu.insertAdjacentHTML('afterbegin', comebackButton);
+    });
+}
 
-    const menuOpen = document.querySelector('.header__nav.open');
-    const menu = document.querySelector('.header__nav');
+function setSubmenuPosition () {
+    document.querySelectorAll('.sub-menu').forEach(submenu => {
+        const menuListTop = menuList.offsetTop;
+        const submenuTop = submenu.parentElement.offsetTop;
+        const difference = submenuTop - menuListTop;
+        submenu.style.top = `-${difference}px`;
+    });
+}
 
-    if (menuOpen) {
-    // при открытии/закрытии закрыть все подменю
-        const allActiveItems = menuOpen.querySelectorAll('.active');
-        for (let i = 0; i < allActiveItems.length; i++) {
-            allActiveItems[i].classList.remove('active');
-        }
-        // добавить событие открытия меню
-        menuOpen.addEventListener('click', openSubmenu);
+function resetSubmenuPosition () {
+    document.querySelectorAll('.sub-menu').forEach(submenu => {
+        submenu.style.top = '';
+    });
+}
+
+function addEventToMenuArrow() {
+    document.querySelectorAll('.menu__arrow').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            btn.closest('.menu-item-has-children').classList.toggle('open');
+            // fixHeaderHeight();
+            if( window.matchMedia('(max-width: 768px)').matches ) {
+                menuList.classList.toggle('show-sub-menu');
+            }
+        }, true);
+    });
+}
+
+function addEventToMenuItem() {
+    menu.querySelectorAll('.menu-item-has-children').forEach(item => {
+        item.addEventListener('click', e => {
+            e.stopPropagation();
+            item.classList.toggle('open');
+            // fixHeaderHeight();
+            if( (window.matchMedia('(max-width: 768px)').matches) ) {
+                menuList.classList.toggle('show-sub-menu');
+            }
+        }, true);
+    });
+}
+
+function closeAllSubmenu() {
+    menu.querySelectorAll('.menu-item-has-children').forEach(item => {
+        item.classList.remove('open');
+    });
+    menu.querySelector('.menu').classList.remove('show-sub-menu');
+}
+
+// disable opened mobile menu on desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth > desktopBreakpoint) {
+        burger.classList.remove('open');
+        menu.classList.remove('open');
+        // fixHeaderHeight();
+        closeAllSubmenu();
+        resetSubmenuPosition();
     } else {
-    // убрать событие если закрыто
-        menu.removeEventListener('click', openSubmenu);
+        setSubmenuPosition();
     }
-
 });
 
+window.addEventListener('load', () => {
+    addMenuArrow();
+    addButtonComeback();
+    addEventToMenuArrow();
+    addEventToMenuItem();
+    setIterationVar();
+    if ( window.matchMedia('(max-width: 768px)').matches ) setSubmenuPosition();
+});
 // fixed header
-const header = document.querySelector('.header');
-
 // фиксим проваливание блока идущего после fixed header
 function fixHeaderHeight() {
-    header.nextElementSibling.style.paddingTop = `${header.clientHeight}px`;
+    header.nextElementSibling.style.paddingTop = `${header.offsetHeight}px`;
 }
 
 // при загрузке пересчитываем высоту header
 window.addEventListener('load', fixHeaderHeight);
 
-// при скролле
-const lengthY = 50;
-document.addEventListener('scroll', () => {
-    fixHeaderHeight();
-    if (window.scrollY > lengthY) {
-        header.classList.add('fixed');
-    } else {
-        header.classList.remove('fixed');
-    }
-});
-
 // при ресайзе пересчитываем высоту header
 window.addEventListener('resize', fixHeaderHeight);
+
+/**
+ * when you scrolling page down - first part of header go to up
+ * when you scrolling page up - first part of header come back down
+ */
+let prevScrollPosition = window.pageYOffset;
+window.addEventListener('scroll', () => {
+    const heightOfFirstPart = window.innerWidth > desktopBreakpoint ? headerRow_1.offsetHeight
+        : document.querySelector('.header').offsetHeight;
+    const currentScrollPosition = window.pageYOffset;
+    if (prevScrollPosition > currentScrollPosition) {
+        header.style.top = '0';
+    } else if (currentScrollPosition > 400) {
+        header.style.top = `-${heightOfFirstPart}px`;
+    }
+    prevScrollPosition = currentScrollPosition;
+});
 
 // is Apple
 function isApple() {
