@@ -12,13 +12,14 @@ const desktopBreakpoint = 768;
 burger.addEventListener('click', () => {
     burger.classList.toggle('open');
     menu.classList.toggle('open');
+    html.classList.toggle('scrollOff')
     // fixHeaderHeight();
-    menuList.classList.remove('show-sub-menu');
+    closeAllSubmenu();
 });
 
 function addMenuArrow() {
     const menuArrow = '<button type="button" class="menu__arrow"></button>';
-    menu.querySelectorAll('.menu-item-has-children').forEach(item => {
+    menu.querySelectorAll('.menu-item-has-children > a').forEach(item => {
         item.insertAdjacentHTML('beforeend', menuArrow);
     });
 }
@@ -37,18 +38,19 @@ function setIterationVar() {
 }
 
 function addButtonComeback() {
-    const comebackButton = '<button type="button" class="menu__comeback">Назад</button>';
     document.querySelectorAll('.sub-menu').forEach(submenu => {
-        submenu.insertAdjacentHTML('afterbegin', comebackButton);
+        const comebackButton = document.createElement('button');
+        comebackButton.classList.add('menu__comeback');
+        comebackButton.textContent = 'Назад';
+        comebackButton.onclick = closeAllSubmenu;
+        submenu.prepend(comebackButton)
     });
 }
 
 function setSubmenuPosition() {
     document.querySelectorAll('.sub-menu').forEach(submenu => {
-        const menuListTop = menuList.offsetTop;
         const submenuTop = submenu.parentElement.offsetTop;
-        const difference = submenuTop - menuListTop;
-        submenu.style.top = `-${difference}px`;
+        submenu.style.top = `-${submenuTop}px`;
     });
 }
 
@@ -62,22 +64,9 @@ function addEventToMenuArrow() {
     document.querySelectorAll('.menu__arrow').forEach(btn => {
         btn.addEventListener('click', e => {
             e.stopPropagation();
-            btn.closest('.menu-item-has-children').classList.toggle('open');
             // fixHeaderHeight();
             if (window.matchMedia('(max-width: 768px)').matches) {
-                menuList.classList.toggle('show-sub-menu');
-            }
-        }, true);
-    });
-}
-
-function addEventToMenuItem() {
-    menu.querySelectorAll('.menu-item-has-children').forEach(item => {
-        item.addEventListener('click', e => {
-            e.stopPropagation();
-            item.classList.toggle('open');
-            // fixHeaderHeight();
-            if ((window.matchMedia('(max-width: 768px)').matches)) {
+                btn.closest('.menu-item-has-children').classList.toggle('open');
                 menuList.classList.toggle('show-sub-menu');
             }
         }, true);
@@ -108,10 +97,10 @@ window.addEventListener('load', () => {
     addMenuArrow();
     addButtonComeback();
     addEventToMenuArrow();
-    addEventToMenuItem();
     setIterationVar();
     if (window.matchMedia('(max-width: 768px)').matches) setSubmenuPosition();
 });
+
 // fixed header
 // фиксим проваливание блока идущего после fixed header
 function fixHeaderHeight() {
@@ -132,6 +121,7 @@ let prevScrollPosition = window.pageYOffset;
 window.addEventListener('scroll', () => {
     const heightOfFirstPart = window.innerWidth > desktopBreakpoint ? headerRow_1.offsetHeight
         : document.querySelector('.header').offsetHeight;
+
     const currentScrollPosition = window.pageYOffset;
     if (prevScrollPosition > currentScrollPosition) {
         header.style.top = '0';

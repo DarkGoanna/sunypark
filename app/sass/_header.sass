@@ -5,10 +5,14 @@
   width: 100%
   z-index: 990
   background: $light
+  transition: top .3s
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04)
   &__row
     &_1
-      border-bottom: .5px solid rgba($origin, .3)
+      border-bottom: 2px solid #F2F2F2
       padding: ($step_3/2) 0
+    &_2
+      border-bottom: 2px solid #F2F2F2
     & .container
       display: flex
       align-items: center
@@ -22,6 +26,8 @@
     & a
       display: flex
       align-items: center
+      & span
+        font-size: 13px
       & svg
         margin-right: ($step_3/2)
       &:hover
@@ -36,18 +42,52 @@
       & svg
         display: none
   &__logo
+    max-width: 96px
+    margin-right: 40px
     & a
       display: flex
       flex-direction: column
       align-items: center
-    & span
-      font-size: 18px
-      font-weight: 700
-      color: $origin
+  &__search
+    max-width: 205px
+    width: 100%
+    height: 40px
+    position: relative
+    border: 1px solid #313131
+    border-radius: $radius
+    &::before
+      content: ''
+      display: inline-block
+      width: 20px
+      height: 20px
+      position: absolute
+      top: 50%
+      left: 5px
+      transform: translateY(-50%)
+      z-index: 1
+      background-image: url('../img/search.svg')
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: center
+    & input
+      width: 100%
+      height: 100%
+      background: transparent
+      border: none
+      border-radius: 0
+      padding-left: 30px
+      font-weight: 500
+      font-size: 13px
+      color: $dark
+      &::placeholder
+        color: #8D8D8D
+        font-weight: 500
+        font-size: 13px
   &__menu
     & .menu
       display: flex
       align-items: center
+      position: relative
       &__arrow
         display: block
         width: 8px
@@ -61,20 +101,21 @@
         right: 0
         transform: translateY(-50%) rotate(45deg)
         background: transparent
+        transition: .2s
       &__comeback
         display: none
+      & > li
+        min-height: 60px
+        display: flex
+        align-items: center
       & li
         list-style: none
-        &:not(:last-child)
-          margin-right: $step_3
         &.menu-item-has-children
-          position: relative
-          padding-right: 15px
+          & > a
+            padding-right: 15px
+            position: relative
           & .sub-menu
             position: absolute
-            top: 100%
-            left: 0
-            width: max-content
             opacity: 0
             visibility: hidden
             transition: .2s
@@ -82,12 +123,6 @@
               padding: 5px 0
               &:nth-child(n)
                 margin-right: 0
-          &:hover, &.open
-            & .sub-menu
-              opacity: 1
-              visibility: visible
-              transform: translateY(0)
-              transition: .2s
   &__burger
     display: none
     border: none
@@ -139,28 +174,119 @@
       align-items: flex-end
     &__search
       display: none
-    &__menu
-      width: 100%
-      & .menu
-        justify-content: space-around
 @media screen and ( min-width: 769px )
   .header
     &__menu
+      width: 100%
       & .menu
+        width: 100%
+        justify-content: space-between
         & > li
           padding: ($step_3/2) 0
+          &.menu-item-has-children
+            &:hover
+              & .menu__arrow
+                transform: translateY(-30%) rotate(225deg)
+                transition: .2s
+              & .sub-menu
+                opacity: 1
+                visibility: visible
+                transform: translateX(-50%) translateY(0)
+                transition: .2s
+            & .sub-menu
+              top: 100%
+              left: calc(50% + 5px)
+              transform: translateX(-50%) translateY(-10px)
+              &::before
+                content: ''
+                width: 100vw
+                height: 100%
+                background: $light
+                position: absolute
+                top: 0
+                left: 50%
+                transform: translateX(-50%)
+                z-index: -1
+                margin-top: 2px
+              & a
+                font-size: 14px
+                font-weight: 500
+                text-transform: lowercase
+          &.menu-item
+            &-v1
+              & .sub-menu
+                width: 100%
+                display: grid
+                grid-template-columns: repeat(4, 1fr)
+                padding: 0
+                & > li
+                  border-right: 2px solid #F2F2F2
+                  display: flex
+                  align-items: center
+                  min-height: 72px
+                  padding: 0 30px
+                  &:first-of-type
+                    // position: relative
+                    // &::before
+                    //   content: ''
+                    //   width: 100vw
+                    //   position: absolute
+                    //   top: 0
+                    //   left: 100%
+                    //   border: 1px solid #F2F2F2
+                    // &::after
+                    //   content: ''
+                    //   width: 100vw
+                    //   position: absolute
+                    //   top: 0
+                    //   right: 0
+                    //   border: 1px solid #F2F2F2
+                  &:nth-of-type(4n+4),
+                  &:nth-of-type(4)
+                    position: relative
+                    border-right: none
+                    padding-right: 0
+                    &::before
+                      content: ''
+                      width: 100vw
+                      position: absolute
+                      bottom: 0
+                      left: 100%
+                      border: 1px solid #F2F2F2
+                    &::after
+                      content: ''
+                      width: 100vw
+                      position: absolute
+                      bottom: 0
+                      right: 0
+                      border: 1px solid #F2F2F2
+                  &:nth-of-type(4n+1),
+                  &:nth-of-type(1)
+                    padding-left: 0
+            &-v2
+              & .sub-menu
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                grid-gap: 15px 66px
+            &-v3
+              & .sub-menu
+                width: 100%
+                display: grid
+                grid-template-rows: repeat(4, 1fr)
+                grid-template-columns: repeat(4, 1fr)
+                padding: 30px 0
+                grid-auto-flow: column
+                grid-gap: 8px
+                & > li
+                  display: flex
+                  align-items: center
         & .sub-menu
-          background: $light
+          // background: $light
           padding: 10px 10px
           margin-left: -5px
           transform: translateY(10px)
-          -webkit-box-shadow: 4px 4px 8px 0px rgba($dark, 0.2)
-          -moz-box-shadow: 4px 4px 8px 0px rgba($dark, 0.2)
-          box-shadow: 4px 4px 8px 0px rgba($dark, 0.2)
-          border-top: .5px solid rgba($origin, .3)
           & li
             padding: 5px 0
-
 @media screen and ( max-width: 768px )
   .header
     &__row
@@ -173,6 +299,9 @@
       margin-left: $step_3
       position: relative
       z-index: 1000
+      &.open
+        & span
+          background: $dark
     &__book
       position: fixed
       right: 15px
@@ -199,26 +328,56 @@
       left: 0
       width: 100%
       height: 100vh
-      padding-top: 25%
       z-index: 999
       background: $light
       opacity: 0
       visibility: hidden
+      &::before
+        content: ''
+        width: 100%
+        height: 75px
+        z-index: 1
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.9) 30%, rgba(255,255,255,0) 100%)
+        position: absolute
+        top: 0
+        left: 0
+      &::after
+        content: ''
+        width: 100%
+        height: 75px
+        z-index: 1
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.9) 30%, rgba(255,255,255,0) 100%)
+        position: absolute
+        bottom: 0
+        left: 0
       &.open
         opacity: 1
         visibility: visible
       & .menu
         flex-direction: column
         transition: .2s
+        padding: 20% 0
+        overflow-y: scroll
+        overflow-x: hidden
+        &::-webkit-scrollbar
+          width: 0px
+          background: transparent
+        &::-webkit-scrollbar-track
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0)
+        &::-webkit-scrollbar-thumb
+          background: transparent
         &__comeback
           display: block
           background: transparent
           border: none
           width: 100%
           cursor: pointer
-          font-size: 18px
+          font-size: 16px
+          font-weight: 600
+          font-family: inherit
           position: relative
           padding: 15px
+          color: rgba($dark, .8)
           &::after
             content: ''
             width: 30%
@@ -241,6 +400,8 @@
           text-align: center
           font-size: 24px
           position: relative
+          & a
+            width: 100%
           &::after
             content: ''
             width: 100%
@@ -256,16 +417,37 @@
               top: 0
               left: 100%
               width: 100vw
+              padding: 20% 0
               & li
                 padding: 15px
+                font-size: 16px
               & > li
                 animation: calc(1s + (var(--out) * .075s)) ease-in-out calc(var(--sub_out) * .1s) submenu-li-out
             &.open
-              & .sub-menu > li
-                animation: calc(1s + (var(--in) * .075s)) ease-in-out calc(var(--sub_in) * .1s) submenu-li-in
+              & .sub-menu
+                opacity: 1
+                visibility: visible
+                transition: .2s
+                & > li
+                  animation: calc(1s + (var(--in) * .075s)) ease-in-out calc(var(--sub_in) * .1s) submenu-li-in
         &__arrow
           right: 15px
           transform: translateY(-50%) rotate(-45deg)
+          width: 30px
+          height: 30px
+          border: none
+          &::before
+            content: ''
+            display: inline-block
+            width: 10px
+            height: 10px
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            pointer-events: none
+            border-right: 1px solid $dark
+            border-bottom: 1px solid $dark
 @keyframes submenu-li-in
   0%
     transform: translateX(0%)
@@ -280,7 +462,6 @@
     transform: translateX(25%)
   100%
     transform: translateX(0%)
-
 @media screen and ( max-width: 580px )
   .header
     &__logo
