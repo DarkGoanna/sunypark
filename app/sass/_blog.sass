@@ -1,0 +1,85 @@
+.blog
+  &__inner
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 55px 15px
+  &__card
+    &:nth-child(n)
+      & picture
+        margin-bottom: 20px
+      & .blog__card-title
+        margin-bottom: 15px
+      & .blog__exerpt
+        margin-bottom: 25px
+    &:first-child
+      grid-column: 1/-1
+      display: grid
+      margin-bottom: 20px
+      grid-row-gap: 0
+      & .blog__card-description
+        display: grid
+        grid-template-columns: 1fr 1fr
+        & .blog__btn
+          grid-column: 2/3
+          grid-row: 1/2
+          margin-left: auto
+      & picture
+        grid-column: 1/-1
+        margin-bottom: 50px
+  &__pagination.pagination
+    grid-column: 1/-1
+    margin-top: 0
+@media screen and ( max-width: 1000px )
+  .blog
+    &__inner
+      grid-template-columns: repeat(2, 1fr)
+    &__card
+      &:first-child
+        & .blog__card-description
+          grid-template-columns: 1fr 300px
+          grid-column-gap: 10px
+@media screen and ( max-width: 768px )
+  .blog
+    &__card
+      &:first-child
+        & .blog__card-description
+          grid-template-columns: 100%
+          & .blog__btn
+            grid-column: auto
+            grid-row: auto
+            margin-left: 0
+        & picture
+          margin-bottom: 30px
+@media screen and ( min-width: 481px )
+  .blog
+    &__card
+      &:first-child
+        & .blog__card-description
+          & .blog__btn
+            border-color: $main
+            background: $main
+            color: $light
+            &:hover
+              background: $light
+              color: $main
+          & .blog__card-title
+            font-size: 48px
+            color: #0E0E0E
+            margin-bottom: 30px
+@media screen and ( max-width: 480px )
+  .blog
+    &__inner
+      grid-template-columns: 100%
+      grid-row-gap: 30px
+    &__card
+      &:first-child
+        margin-bottom: 0
+        & .blog__card-description
+          & .blog__btn
+            grid-column: auto
+            grid-row: auto
+            margin-left: 0
+            width: 200px
+            height: 45px
+        & picture
+          margin-bottom: 30px

@@ -1,0 +1,93 @@
+.last-news
+  &__title
+    text-align: center
+  &__inner
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    column-gap: 30px
+    max-width: 1075px
+    width: 100%
+    margin: 36px auto 0
+  &__image
+    margin-bottom: 18px
+    display: block
+    & img,
+    & source,
+    & a
+      display: block
+      width: 100%
+    & img,
+    & source
+      object-fit: cover
+  &__card-title
+    margin-bottom: 14px
+    display: block
+  &__card-text
+    margin-bottom: 8px
+  &__btn
+    font-weight: 600
+    font-size: 16px
+    color: $main
+    display: inline-block
+    position: relative
+    padding-right: 20px
+    &::after
+      content: ''
+      display: block
+      width: 6px
+      height: 6px
+      border-right: 2px solid $main
+      border-bottom: 2px solid $main
+      transform: translateY(-40%) rotate(-45deg)
+      position: absolute
+      top: 50%
+      right: 5px
+      transition: .2s
+    &::before
+      content: ''
+      display: block
+      width: 0px
+      height: 2px
+      background: $main
+      position: absolute
+      top: 50%
+      right: 1px
+      transform: translateY(-25%)
+      opacity: 0
+      visibility: hidden
+      transition: .2s
+    &:hover
+      &::after
+        right: 0
+        transition: .2s
+      &::before
+        width: 10px
+        transition: .2s
+        opacity: 1
+        visibility: visible
+@media screen and ( max-width: 1200px )
+  .last-news
+    &__inner
+      column-gap: 20px
+@media screen and ( max-width: 1000px )
+  .last-news
+    &__inner
+      grid-template-columns: repeat(3, 1fr)
+    &__card
+      &:nth-child(4)
+        display: none
+@media screen and ( max-width: 768px )
+  .last-news
+    &__inner
+      grid-template-columns: repeat(2, 1fr)
+      grid-row-gap: 30px
+    &__card
+      &:nth-child(4)
+        display: block
+@media screen and ( max-width: 580px )
+  .last-news
+    &__inner
+      grid-template-columns: 100%
+      gap: 30px
+    &__card
+      width: 100%

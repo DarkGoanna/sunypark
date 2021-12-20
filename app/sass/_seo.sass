@@ -1,4 +1,5 @@
 .seo
+  padding-bottom: $step_2
   & h1,
   & h2,
   & h3,
@@ -16,7 +17,13 @@
   & h6
     margin-bottom: 15px
   &__text
-    max-height: 10000px
+    transition: .3s
+    & > p
+      &:not(:first-child)
+        margin-top: 15px
+    & ol,
+    & ul
+      padding-left: 30px
     &.less
       max-height: var(--height)
       transition: .2s

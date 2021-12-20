@@ -1,0 +1,81 @@
+.callback-v3
+  position: relative
+  background-image: url(../img/callback-v3-image.jpg)
+  background-position: right
+  background-size: auto 100%
+  background-repeat: no-repeat
+  min-height: 540px
+  color: $light
+  padding: $step_2 0
+  &::before
+    content: ''
+    width: 70%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    transition: .2s
+    background: linear-gradient(91.55deg, #1A5BE5 0.88%, rgba(26, 91, 229, 0) 93.92%)
+  & *
+    position: relative
+    z-index: 2
+  &__title
+    margin-bottom: $step_3
+  &__subtitle
+    margin-bottom: 15px
+  &__inner
+    max-width: 550px
+    width: 100%
+  &__form-wrapper
+    & .callback-form
+      &__item
+        & input
+          max-width: 500px
+  &--main
+    background: $main
+    & .callback__description
+      max-width: 400px
+      margin: auto
+    & .callback__image
+      margin-bottom: 0
+  &--light
+    background: #F2F2F2
+    color: $dark
+    &::before
+      background: #F2F2F2
+    & .callback__description
+      max-width: 400px
+      margin: auto
+  &--person
+    padding-top: 75px
+    padding-bottom: 0
+@media screen and ( max-width: 1000px )
+  .callback-v3
+    &::before
+      width: 80%
+    &--light,
+    &--main
+      & .callback__image
+        margin: -75px auto 40px
+    &--person
+      & .callback__inner
+        display: grid
+        grid-template-columns: .35fr .65fr
+      & .callback__image
+        max-width: 100%
+        margin: 0 auto -53px
+@media screen and ( max-width: 768px )
+  .callback-v3
+    &::before
+      width: 85%
+    &--person
+      & .callback__inner
+        grid-template-columns: 100%
+      & .callback__image
+        display: none
+@media screen and ( max-width: 580px )
+  .callback-v3
+    background-position: 95%
+    &::before
+      width: 100%

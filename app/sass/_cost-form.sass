@@ -9,6 +9,8 @@
     right: 15px
     bottom: 27px
     width: calc(100% - 30px)
+    max-width: 800px
+    margin: auto
     height: max-content
   &__title
     text-align: center
@@ -23,7 +25,7 @@
       font-weight: 700
   &__subtitle
     display: block
-    font-weight: 700
+    font-weight: 600
     margin-bottom: 3px
   &__trigger
     display: none
@@ -207,7 +209,13 @@
       left: 0
       z-index: 1
       transition: .2s
-
+#cost-form__form
+  border-radius: $radius
+  display: flex
+  flex-direction: column
+  align-items: center
+  & .cost-form__item
+    margin-bottom: 13px
 @media screen and ( max-width: 1200px )
   .cost-form
     padding: 15px
@@ -221,6 +229,7 @@
       bottom: auto
       height: auto
       max-width: 330px
+      margin: 0
     &__status
       min-width: 300px
     &.banner__form

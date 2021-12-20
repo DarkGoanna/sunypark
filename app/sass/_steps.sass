@@ -1,0 +1,29 @@
+.steps
+  &__inner
+    margin-top: $step_2
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 15px
+  &__card
+    background: $main
+    border-radius: $radius
+    position: relative
+    padding: 40px 25px 30px
+  &__text
+    color: $light
+    font-size: 16px
+    line-height: 1.4
+  & img
+    position: absolute
+    top: 0
+    left: 25px
+    transform: translateY(-50%)
+@media screen and ( max-width: 1200px )
+  .steps
+    &__inner
+      grid-template-columns: repeat(2, 1fr)
+@media screen and ( max-width: 480px )
+  .steps
+    &__inner
+      grid-template-columns: 100%
+      grid-row-gap: 20px

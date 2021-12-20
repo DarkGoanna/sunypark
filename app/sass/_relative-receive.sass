@@ -1,0 +1,89 @@
+.relative-receive
+  padding-bottom: 146px
+  &__title
+    text-align: center
+  &__inner
+    margin-top: 146px
+    display: grid
+    grid-template-columns: 275px 1fr 275px
+    grid-gap: 10px 50px
+    position: relative
+  &__image
+    width: 100%
+    grid-column: 2/3
+    grid-row: 1/5
+    display: flex
+    align-items: center
+    justify-content: center
+    & svg
+      width: 100%
+  &__card
+    transition: .2s
+    display: flex
+    align-items: center
+    border-radius: $radius
+    padding: 15px
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25)
+    background-color: #ecf9fe
+    height: 80px
+    align-self: center
+
+    &:nth-child(even)
+      text-align: right
+      justify-content: end
+  &__hour
+    transform-box: fill-box
+    transform-origin: bottom center
+    transform: rotate(0deg)
+    animation: clock-arrow 12s linear infinite
+  &__minute
+    transform-box: fill-box
+    transform-origin: left center
+    transform: rotate(0deg)
+    animation: clock-arrow 6s linear infinite
+  &__second
+    transform-box: fill-box
+    transform-origin: right center
+    transform: rotate(0deg)
+    animation: clock-arrow 3s linear infinite
+  &__magic-line
+    transform-box: view-box
+    transform-origin: center
+    transform: rotate(0deg)
+@keyframes clock-arrow
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+@media screen and ( max-width: 1200px )
+  .relative-receive
+    &__inner
+      margin-top: 75px
+@media screen and ( max-width: 1000px )
+  .relative-receive
+    &__inner
+      grid-gap: 20px
+      grid-template-columns: 200px 1fr 200px
+
+@media screen and ( max-width: 768px )
+  .relative-receive
+    &__inner
+      grid-template-columns: 1fr 1fr
+      margin-top: 30px
+    &__image
+      grid-column: 1/-1
+      grid-row: 1/2
+      height: 250px
+      max-width: 250px
+      margin: auto
+      margin-bottom: 15px
+      & svg
+        height: 100%
+    &__card
+      &:nth-child(n)
+        text-align: center
+        justify-content: center
+@media screen and ( max-width: 480px )
+  .relative-receive
+    &__inner
+      grid-template-columns: 100%

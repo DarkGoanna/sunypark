@@ -1,0 +1,13 @@
+.multi-column
+  columns: 2
+  column-gap: 30px
+  -webkit-column-break-inside: avoid
+  page-break-inside: avoid
+  break-inside: avoid
+  & > *:not(:last-child)
+    margin-bottom: 35px
+  & img
+    width: 100%
+@media screen and ( max-width: 580px )
+  .multi-column
+    columns: 1

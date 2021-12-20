@@ -16,13 +16,13 @@ body
   color: $dark
   overflow-x: hidden
   &::-webkit-scrollbar
-    width: 7px
-    background: $light
+    width: 5px
+    background: transparent
   &::-webkit-scrollbar-track
-    box-shadow: inset 0 0 6px rgba($dark, 0.3)
+    box-shadow: inset 0 0 6px rgba($light, 0.3)
 
   &::-webkit-scrollbar-thumb
-    background: $dark
+    background: $main
 a
   text-decoration: none
   color: inherit
@@ -35,7 +35,45 @@ input, textarea
     font-size: 14px
     font-weight: 400
 
+.fancybox__toolbar
+  display: none
+.fancybox__carousel.is-draggable .fancybox__slide, .fancybox__carousel.is-draggable .fancybox__slide .fancybox__content
+  cursor: pointer
+
+.compensate-for-scrollbar
+  margin-right: 0!important
+
+.map iframe
+  width: 100%
+  height: 418px
+
 @import 'header'
 @import 'banner'
 @import 'cost-form'
+@import 'what-you-get'
+@import 'callback'
+@import 'services'
+@import 'callback-v2'
+@import 'relative-receive'
+@import 'team'
+@import 'routine'
+@import 'gallery'
 @import 'seo'
+@import 'callback-v3'
+@import 'callback-v4'
+@import 'last-news'
+@import 'callback-popup'
+@import 'steps'
+@import 'benefits'
+@import 'menu'
+@import 'settler'
+@import 'video-reviews'
+@import 'sidebar'
+@import 'multi-column'
+@import 'advantage'
+@import 'about-filial'
+@import 'contacts'
+@import 'service-cards'
+@import 'blog'
+@import 'pagination'
+@import 'single-post'

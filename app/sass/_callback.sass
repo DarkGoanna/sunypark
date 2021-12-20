@@ -1,0 +1,142 @@
+.callback-wrapper
+  padding: 50px 0
+  overflow: hidden
+  &--fill
+    padding: 100px 0
+.callback
+  background-color: $main
+  color: $light
+  padding: 50px 0 35px
+  position: relative
+  &::before
+    content: ''
+    display: block
+    width: 25%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background-color: $main
+    z-index: 2
+  &__inner
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 30px
+  &__image
+    position: relative
+    margin-bottom: -200px
+    max-width: 640px
+    max-height: 640px
+    pointer-events: none
+    & img
+      display: block
+      width: 100%
+      position: relative
+      z-index: 4
+      pointer-events: none
+    &::before
+      content: ''
+      display: block
+      width: 100%
+      padding-top: 100%
+      background: rgba(255, 255, 255, 0.2)
+      backdrop-filter: blur(4px)
+      border-radius: 50%
+      overflow: hidden
+      position: absolute
+      top: -47px
+      right: -17px
+      z-index: 3
+      pointer-events: none
+    &--person
+      margin-bottom: 0
+      margin-top: -100px
+      & img
+        height: 100%
+        object-fit: contain
+      &::before
+        content: none
+  &__text
+    margin: 30px 0 0
+    padding-bottom: 250px
+  &__row
+    color: $main
+    position: relative
+    position: absolute
+    left: 0
+    bottom: 50px
+    width: 100%
+    height: max-content
+    &::before
+      content: ''
+      display: block
+      width: 100%
+      height: 100%
+      background-color: $light
+      position: absolute
+      left: 0%
+      top: 0
+.callback-info
+  padding: 20px 0
+  &__inner
+    position: relative
+    z-index: 2
+    display: grid
+    grid-template-columns: 1fr max-content
+    grid-column-gap: $step_2
+    min-height: 133px
+    max-width: calc( 50% - 15px )
+    margin-left: auto
+    align-items: center
+  &__text
+    max-width: 312px
+    & a
+      display: block
+@media screen and ( max-width: 1200px )
+  .callback
+    &__image
+      margin-bottom: 0
+      align-self: end
+  .callback-info
+    &__inner
+      grid-column-gap: 15px
+@media screen and ( max-width: 1000px )
+  .callback
+    &::before
+      content: none
+    &__inner
+      display: block
+      position: relative
+      &::after
+        content: ''
+        display: block
+        clear: both
+    &__image
+      max-width: 50%
+      margin: -100px auto 40px
+      &::before
+        content: none
+    &__text
+      padding-bottom: 50px
+    &__row
+      position: relative
+      bottom: auto
+  .callback-info
+    &__inner
+      max-width: 100%
+    &__text
+      max-width: 100%
+@media screen and ( max-width: 768px )
+  .callback-info
+    &__inner
+      min-height: auto
+      padding: 15px 0
+@media screen and ( max-width: 650px )
+  .callback-info
+    &__inner
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      gap: 30px
+    &__btn
+      margin: auto

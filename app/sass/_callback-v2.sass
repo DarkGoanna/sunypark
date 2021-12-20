@@ -1,0 +1,105 @@
+.callback-v2
+  background-color: $main
+  padding: $step_1 0
+  color: $light
+  &__inner
+    display: grid
+    grid-template-columns: 1fr max-content max-content
+    grid-column-gap: $step_2
+    align-items: center
+  &__image
+    margin-top: -$step_1 - 90px
+    margin-bottom: -$step_1
+    pointer-events: none
+  &__info
+    max-width: 492px
+    width: 100%
+    letter-spacing: 0.01em
+  &__text
+    margin-top: $step_2
+  &__form-wrapper
+    & .callback-form
+      &__item
+        & input
+          max-width: 236px
+.callback-form
+  display: flex
+  flex-direction: column
+  &__item
+    margin-bottom: 9px
+    & label
+      display: block
+      font-size: 14px
+      font-weight: 400
+      line-height: 2
+      letter-spacing: 0.01em
+    & input
+      width: 100%
+      border: 0.5px solid #46ACE1
+      box-shadow: 0px 4px 15px rgba(26, 91, 229, 0.19)
+      min-height: 56px
+      border-radius: $radius
+      padding: 8px 16px
+      font-weight: 700
+  &__btn
+    margin-top: 30px
+
+@media screen and ( max-width: 1200px )
+  .callback-v2
+    &__inner
+      grid-template-areas: 'info image''form image'
+      grid-template-columns: 1fr max-content
+      grid-column-gap: $step_3
+    &__image
+      grid-area: image
+      margin-top: -124px
+    &__info
+      grid-area: info
+      max-width: 100%
+    &__form-wrapper
+      & .callback-form
+        grid-area: form
+        flex-direction: row
+        align-items: end
+        column-gap: 15px
+        margin-top: $step_2
+        &__item
+          margin-bottom: 0
+        &__btn
+          margin-top: 0
+
+@media screen and ( max-width: 1000px )
+  .callback-v2
+    &__image
+      margin-top: auto
+
+@media screen and ( max-width: 900px )
+  .callback-v2
+    &__inner
+      grid-template-areas: 'info info''form image'
+    &__form-wrapper
+      & .callback-form
+        flex-direction: column
+        max-width: 100%
+        align-items: normal
+        margin-top: 0
+        &__item
+          margin-bottom: 9px
+          & input
+            max-width: 300px
+        &__btn
+          margin-top: 30px
+
+@media screen and ( max-width: 600px )
+  .callback-v2
+    &__inner
+      grid-template-columns: 100%
+      grid-template-areas: 'info''form'
+    &__image
+      display: none
+    &__form-wrapper
+      & .callback-form
+        margin-top: $step_2
+        &__item
+          & input
+            max-width: 100%

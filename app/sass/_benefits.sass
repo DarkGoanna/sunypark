@@ -1,0 +1,76 @@
+.benefits
+  &__inner
+    display: flex
+    flex-direction: column
+    row-gap: 100px
+  &__card
+    display: grid
+    grid-template-columns: 1fr 1fr
+    align-items: center
+    grid-row-gap: $step_1
+    // max-width: 830px
+    &:nth-child(odd)
+      margin-right: auto
+      & .benefits__card-description
+        padding-left: 50px
+    &:nth-child(even)
+      margin-left: auto
+      & .benefits__card-description
+        padding-right: 50px
+        grid-column: 1/2
+        grid-row: 1/2
+    &-title
+      margin-bottom: 15px
+      & span:not(:last-child)
+        margin-right: 4px
+    &:hover
+      & .benefits__image
+        &::after
+          opacity: 0
+          transition: .2s
+  &__image
+    position: relative
+    &::before,
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: 50%
+    &::before
+      transform: translate(calc(-50% + 8px), calc(-50% - 8px))
+      background: linear-gradient(45deg, rgba(247,247,247,1) 0%, rgba(26,91,229,1) 100%)
+      width: 100%
+      height: 100%
+    &::after
+      transform: translate(calc(-50% + 8px), calc(-50% - 8px))
+      background: #fff
+      width: calc(100% - 6px)
+      height: calc(100% - 6px)
+      transition: .2s
+    & img
+      position: relative
+      z-index: 1
+@media screen and ( max-width: 768px )
+  .benefits
+    &__inner
+      row-gap: 50px
+    &__card
+      &:nth-child(odd)
+        & .benefits__card-description
+          padding-left: 30px
+      &:nth-child(even)
+        & .benefits__card-description
+          padding-right: 30px
+@media screen and ( max-width: 580px )
+  .benefits
+    &__card
+      grid-template-columns: 100%
+      grid-row-gap: 20px
+      &:nth-child(n)
+        & .benefits__card-description
+          padding: 0
+      &:nth-child(even)
+        & .benefits__card-description
+          grid-column: auto
+          grid-row: auto

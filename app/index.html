@@ -4,9 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   <link rel="stylesheet" href="css/style.min.css" />
@@ -19,46 +17,30 @@
         <!-- logo -->
         <div class="header__logo">
           <a href="/">
-            <img src="img/logo.png" alt="logo">
-            <span>Солнечный Парк</span>
+            <img src="img/logo.svg" alt="logo">
           </a>
+        </div>
+        <!-- search -->
+        <div class="header__search">
+          <input type="text" placeholder="Поиск">
         </div>
         <!-- contacts -->
         <div class="header__contacts">
           <div class="header__contact header__phone">
             <a href="tel:+380671530505">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0)">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M5.06936 1.80877C5.90149 1.26094 6.95797 1.57628 7.43527 2.37179L9.53507 5.87146C10.0158 6.6727 9.7823 7.71027 9.00464 8.22828L7.5414 9.20298C7.42354 9.28149 7.40529 9.42478 7.47256 9.52116C8.17696 10.5303 9.3921 12.1916 10.426 13.2255C11.46 14.2595 13.1216 15.4748 14.1306 16.1791C14.227 16.2464 14.3702 16.2282 14.4488 16.1104L15.4243 14.6471C15.9424 13.8699 16.9797 13.6366 17.7807 14.1172L21.2805 16.2171C22.0761 16.6945 22.3914 17.7513 21.8432 18.5834C21.4739 19.144 20.9202 19.9093 20.2492 20.5948C19.5912 21.2669 18.751 21.9347 17.7993 22.1897C16.4593 22.5488 14.8742 22.0921 13.7345 21.6383C12.5511 21.1672 11.6396 20.612 11.5622 20.5645L11.5577 20.5616L11.5466 20.5547L11.5371 20.5485L11.5355 20.5474C11.4292 20.4772 8.4437 18.5042 6.7954 16.8559C5.14714 15.2076 3.17465 12.2229 3.10463 12.1169L3.10298 12.1144L3.09684 12.1049L3.08986 12.0938L3.08706 12.0893C3.03959 12.0121 2.48426 11.1005 2.0131 9.91715C1.5593 8.77736 1.10252 7.19214 1.46179 5.85212C1.71698 4.90028 2.38504 4.06019 3.05745 3.40231C3.74311 2.73145 4.50867 2.1779 5.06936 1.80877ZM6.01746 3.04071C5.97449 3.02984 5.93378 3.03557 5.89418 3.06164C5.37621 3.40264 4.69728 3.89642 4.10647 4.47448C3.5024 5.06551 3.062 5.67592 2.91062 6.24056C2.68804 7.07077 2.96382 8.2499 3.40671 9.3623C3.81851 10.3966 4.30518 11.2058 4.36084 11.2971C4.49277 11.4965 6.35417 14.2933 7.85607 15.7952C9.35802 17.2972 12.1549 19.1586 12.3544 19.2906C12.4458 19.3464 13.255 19.833 14.2893 20.2447C15.4016 20.6876 16.5808 20.9633 17.411 20.7409C17.9757 20.5895 18.5862 20.1493 19.1773 19.5454C19.7555 18.9548 20.2494 18.2761 20.5906 17.7582C20.6167 17.7186 20.6224 17.6779 20.6116 17.6349C20.6 17.589 20.5678 17.5388 20.5087 17.5033L17.009 15.4035C16.8946 15.3348 16.7464 15.3681 16.6723 15.4792L15.6968 16.9424C15.1652 17.7399 14.0777 17.9715 13.2721 17.4091C12.2641 16.7055 10.503 15.4238 9.36535 14.2861C8.22782 13.1486 6.94624 11.3878 6.24259 10.3797C5.68008 9.57392 5.91197 8.48606 6.70982 7.95459L8.17306 6.9799C8.28415 6.90589 8.31751 6.75767 8.24883 6.64321L6.14903 3.14354C6.11357 3.08443 6.06333 3.05232 6.01746 3.04071Z"
-                    fill="#1A5BE6" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.2557 5.90767C12.3068 5.49661 12.6814 5.20476 13.0924 5.25579L13 6.00008C13.0924 5.25579 13.0927 5.25583 13.093 5.25587L13.0937 5.25595L13.095 5.25612L13.0983 5.25654L13.1068 5.25768L13.1314 5.26122C13.1512 5.26419 13.1777 5.26841 13.2104 5.2742C13.2758 5.28578 13.3663 5.30364 13.479 5.33026C13.7042 5.38349 14.0182 5.47187 14.3961 5.61539C15.1521 5.90258 16.1644 6.41076 17.2302 7.29891C18.2971 8.18801 18.9196 9.0429 19.2783 9.69873C19.4572 10.0257 19.5691 10.3009 19.6379 10.503C19.6723 10.6041 19.6959 10.6868 19.7116 10.7485C19.7195 10.7793 19.7254 10.8049 19.7297 10.825L19.7351 10.8508L19.7369 10.8605L19.7377 10.8646L19.738 10.8664L19.7382 10.8673C19.7382 10.8677 19.7383 10.8681 19 11.0001L19.7383 10.8681C19.8112 11.2758 19.5398 11.6655 19.132 11.7384C18.7272 11.8107 18.3403 11.5438 18.2634 11.141C18.2628 11.1383 18.2611 11.1308 18.2581 11.119C18.2517 11.0939 18.2392 11.0489 18.2179 10.9863C18.1754 10.8613 18.0975 10.6658 17.9623 10.4185C17.6928 9.9259 17.1903 9.2183 16.2699 8.45124C15.3483 7.68325 14.4855 7.25393 13.8634 7.01765C13.5522 6.89944 13.3014 6.8296 13.134 6.79004C13.0503 6.77027 12.9877 6.75809 12.9489 6.75123C12.9295 6.74781 12.9162 6.74571 12.9092 6.74466L12.9037 6.74387C12.4947 6.69096 12.2049 6.31743 12.2557 5.90767Z"
-                    fill="#1A5BE6" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.2582 1.88945C12.3193 1.47976 12.7009 1.19713 13.1106 1.25817L13 1.99998C13.1106 1.25817 13.1109 1.25822 13.1113 1.25827L13.112 1.25839L13.1138 1.25865L13.118 1.2593L13.1292 1.26111L13.1632 1.26697C13.1908 1.27194 13.2284 1.27913 13.2753 1.2891C13.3691 1.30902 13.5003 1.34005 13.6644 1.38657C13.9924 1.47961 14.4519 1.63471 15.0057 1.88713C16.1145 2.39253 17.5967 3.28594 19.1554 4.84465C20.7141 6.40336 21.6075 7.88548 22.1129 8.99432C22.3653 9.54811 22.5204 10.0076 22.6135 10.3356C22.66 10.4997 22.691 10.6309 22.7109 10.7247C22.7209 10.7716 22.7281 10.8092 22.733 10.8368L22.7389 10.8708L22.7407 10.8821L22.7414 10.8862L22.7416 10.888L22.7417 10.8887C22.7418 10.8891 22.7419 10.8895 22 11L22.7419 10.8895C22.8029 11.2991 22.5203 11.6807 22.1106 11.7418C21.702 11.8027 21.3215 11.5218 21.2588 11.114C21.2588 11.114 21.2588 11.114 21.2588 11.114C21.2587 11.1139 21.2587 11.1139 21.2587 11.1138L21.2567 11.1023C21.2545 11.0898 21.2503 11.0676 21.2437 11.0364C21.2304 10.974 21.2074 10.8753 21.1704 10.7449C21.0964 10.4841 20.9667 10.0963 20.748 9.61644C20.3112 8.65804 19.5171 7.32766 18.0947 5.90531C16.6724 4.48295 15.342 3.68886 14.3836 3.25203C13.9037 3.03333 13.5159 2.90363 13.2551 2.82965C13.1247 2.79266 13.0261 2.76962 12.9636 2.75636C12.9324 2.74973 12.9103 2.74555 12.8977 2.74329M12.2582 1.88945C12.1974 2.29799 12.4782 2.67859 12.886 2.74127L12.2582 1.88945ZM21.2586 11.1128C21.2586 11.1127 21.2586 11.1126 21.2585 11.1126L21.2586 11.1127L21.2586 11.1128ZM21.2584 11.1117C21.2584 11.1115 21.2584 11.1113 21.2583 11.1111C21.2583 11.1111 21.2583 11.1112 21.2583 11.1112L21.2584 11.1117Z"
-                    fill="#1A5BE6" />
-                </g>
-                <defs>
-                  <clipPath id="clip0">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
+              <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14.684 13.5497L13.526 14.7076C13.0127 15.2209 12.3319 15.5 11.6206 15.5C11.5089 15.5 11.3973 15.4928 11.2838 15.4784C8.86866 15.1794 6.20865 13.7333 3.98641 11.5112C1.764 9.29066 0.319536 6.63097 0.0207703 4.21596C-0.0818647 3.38402 0.199032 2.56828 0.793347 1.97398L1.95136 0.816066C2.37282 0.394645 3.05898 0.394645 3.47857 0.816066L6.02512 3.36241C6.22863 3.5659 6.34207 3.83785 6.34207 4.12588C6.34207 4.41404 6.23039 4.68587 6.02512 4.88936L4.62404 6.29032L9.20907 10.875L10.6102 9.47402C11.0316 9.0526 11.7159 9.0526 12.1374 9.47402L14.6839 12.0204C15.1054 12.4419 15.1054 13.128 14.6839 13.5495L14.684 13.5497Z"
+                  fill="#1A5BE6" />
               </svg>
               <span>+38 (067) 153 05 05</span>
             </a>
           </div>
           <div class="header__contact header__email">
             <a href="mailto:domprestarelih.od@gmail.com">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M4 5.75C3.30964 5.75 2.75 6.30964 2.75 7V18C2.75 18.6904 3.30964 19.25 4 19.25H20C20.6904 19.25 21.25 18.6904 21.25 18V7C21.25 6.30964 20.6904 5.75 20 5.75H4ZM1.25 7C1.25 5.48122 2.48122 4.25 4 4.25H20C21.5188 4.25 22.75 5.48122 22.75 7V18C22.75 19.5188 21.5188 20.75 20 20.75H4C2.48122 20.75 1.25 19.5188 1.25 18V7Z"
-                  fill="#1A5BE6" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M1.82682 8.2243C2.00945 7.85252 2.45888 7.69918 2.83066 7.88181L11.8898 12.3319C11.9593 12.366 12.0407 12.366 12.1102 12.3319L21.1693 7.88181C21.5411 7.69918 21.9905 7.85252 22.1732 8.2243C22.3558 8.59608 22.2024 9.04552 21.8307 9.22814L12.7716 13.6782C12.2849 13.9173 11.715 13.9173 11.2284 13.6782L2.16931 9.22814C1.79753 9.04552 1.64419 8.59608 1.82682 8.2243Z"
-                  fill="#1A5BE6" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M15.6179 12.6272C15.5429 12.5728 15.4441 12.5642 15.361 12.605L12.77 13.8746C12.2843 14.1126 11.7157 14.1126 11.23 13.8746L8.63899 12.605C8.55587 12.5642 8.45704 12.5728 8.38212 12.6272L2.44059 16.9403C2.10538 17.1836 1.63639 17.1091 1.39305 16.7739C1.14972 16.4387 1.22419 15.9697 1.5594 15.7264L7.50094 11.4133C8.02532 11.0326 8.71713 10.9729 9.29902 11.258L11.89 12.5276C11.9594 12.5616 12.0406 12.5616 12.11 12.5276L14.701 11.258C15.2829 10.9729 15.9747 11.0326 16.4991 11.4133L22.4406 15.7264C22.7758 15.9697 22.8503 16.4387 22.6069 16.7739C22.3636 17.1091 21.8946 17.1836 21.5594 16.9403L15.6179 12.6272Z"
+              <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.70113 8.89615L0 4.4286C0 3.64297 0.675095 3 1.49997 3H13.4998C14.3246 3 14.9997 3.64297 14.9997 4.4286L8.2986 8.89615C7.88029 9.17478 7.11941 9.17478 6.70113 8.89615ZM7.50008 10.5316C6.90304 10.5316 6.30648 10.3768 5.84106 10.0669L0.000268114 6.1723V11.5714C0.000268114 12.357 0.675363 13 1.50024 13H13.5C14.3249 13 15 12.357 15 11.5714V6.1723L9.15921 10.0665C8.69382 10.3764 8.09712 10.5316 7.50008 10.5316Z"
                   fill="#1A5BE6" />
               </svg>
               <span>domprestarelih.od@gmail.com</span>
@@ -67,7 +49,7 @@
         </div>
         <!-- btn -->
         <div class="header__book">
-          <button class="btn btn_big" data-fancybox data-src="#callback">
+          <button class="btn" data-fancybox data-src="#callback">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0)">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -103,38 +85,65 @@
         <nav class="header__menu">
           <ul class="menu">
             <li><a href="#">Распорядок дня</a></li>
-            <li class="menu-item-has-children">
+            <li class="menu-item-has-children menu-item-v1">
               <a href="#">Услуги</a>
               <ul class="sub-menu">
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
+                <li><a href="#">УХОД ЗА ЛЕЖАЧИМИ ПОЖИЛЫМИ</a></li>
+                <li><a href="#">УХОД ЗА ПРЕСТАРЕЛЫМИ</a></li>
+                <li><a href="#">УХОД ЗА ОНКОЛОГИЧЕСКИМИ</a></li>
+                <li><a href="#">УХОД ЗА ОНКОЛОГИЧЕСКИМИ</a></li>
+                <li><a href="#">УХОД ЗА ПОЖИЛЫМИ С БОЛЬНЫМИ ПЕРЕЛОМОМ ШЕЙКИ БЕДРА</a></li>
+                <li><a href="#">УХОД ЗА ПОЖИЛЫМИ С ДЕМЕНЦИЕЙ</a></li>
+                <li><a href="#">УХОД ЗА ПОЖИЛЫМИ ПОСЛЕ ИНСУЛЬТА</a></li>
+                <li><a href="#">УХОД ЗА ПОЖИЛЫМИ ПОСЛЕ ИНФАРКТА</a></li>
+                <li><a href="#">УХОД ЗА БОЛЬНЫМИ АЛЬЦГЕЙМЕРОМ</a></li>
+                <li><a href="#">УХОД ЗА ИНВАЛИДАМИ</a></li>
+                <li><a href="#">УСЛУГИ ХОСПИС</a></li>
+                <li><a href="#">ГЕРИАТРИЧЕСКИЙ ПАНСИОНАТ</a></li>
+                <li><a href="#">УСЛУГИ СИДЕЛКИ</a></li>
+                <li><a href="#">ПАЛЛИАТИВНАЯ ПОМОЩЬ</a></li>
               </ul>
             </li>
-            <li class="menu-item-has-children">
+            <li class="menu-item-has-children menu-item-v2">
               <a href="#">Филиалы</a>
               <ul class="sub-menu">
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
+                <li><a href="#">УКРАИНА</a></li>
+                <li><a href="#">КИЕВ</a></li>
+                <li><a href="#">ЧЕРКАССЫ</a></li>
+                <li><a href="#">ПОЛТАВА</a></li>
+                <li><a href="#">ОДЕССА</a></li>
+                <li><a href="#">ЗАПОРОЖЬЕ</a></li>
+                <li><a href="#">ЧЕРНИГОВ</a></li>
+                <li><a href="#">КРИВОЙ РОГ</a></li>
+                <li><a href="#">ХАРЬКОВ</a></li>
+                <li><a href="#">ТЕРНОПОЛЬ</a></li>
+                <li><a href="#">КРОПИВИИЦКИЙ</a></li>
+                <li><a href="#">ЛЬВОВ</a></li>
+                <li><a href="#">РОВНО</a></li>
+                <li><a href="#">НИКОЛАЕВ</a></li>
+                <li><a href="#">ВИННИЦА</a></li>
+                <li><a href="#">ЧЕРНОВЦЫ</a></li>
+                <li><a href="#">ХЕРСОН</a></li>
+                <li><a href="#">ДНЕПР</a></li>
+                <li><a href="#">ЖИТОМИР</a></li>
               </ul>
             </li>
             <li><a href="#">Блог</a></li>
-            <li class="menu-item-has-children">
+            <li class="menu-item-has-children menu-item-v3">
               <a href="#">О компании</a>
               <ul class="sub-menu">
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
-                <li><a href="#">Lorem ipsum dolor sit.</a></li>
+                <li><a href="#">СКИДКИ И АКЦИИ</a></li>
+                <li><a href="#">ВЕЩИ ПРИ ПОСТУПЛЕНИИ</a></li>
+                <li><a href="#">ТРАНСПОРТИРОВКА</a></li>
+                <li><a href="#">ИСТОРИЯ ЧАСТНОГО ДОМА ПРЕСТАРЕЛЫХ «ЗОММУ РАВК»</a></li>
+                <li><a href="#">ВИДЕО ФИЛИАЛОВ</a></li>
+                <li><a href="#">ОФОРМЛЕНИЕ В ДОМ ПРЕСТАРЕЛЫХ</a></li>
+                <li><a href="#">ВАКАНСИИ</a></li>
               </ul>
             </li>
             <li><a href="#">Контакты</a></li>
           </ul>
         </nav>
-        <!-- search -->
-        <div class="header__search">
-          <input type="text">
-        </div>
       </div>
     </div>
   </header>
@@ -142,16 +151,16 @@
     <section class="banner">
       <picture>
         <!-- <source srcset="img/banner.webp" type="image/webp"> -->
-        <img src="img/banner.jpg" alt="banner">
+        <img src="img/banner.jpg" alt="banner" />
       </picture>
       <div class="container">
         <div class="banner__form cost-form">
-          <div class="cost-form__title title-3">Узнать стоимость проживания</div>
+          <div class="cost-form__title t3">Узнать стоимость проживания</div>
           <div class="cost-form__inner">
             <!-- age -->
             <div class="cost-form__age cost-form__item">
               <label class="cost-form__subtitle" for="age">Возраст</label>
-              <input type="number" id="age" min="1" max="120" placeholder="18">
+              <input type="number" id="age" min="1" max="120" placeholder="18" />
             </div>
             <!-- gender -->
             <div class="cost-form__gender cost-form__item">
@@ -159,7 +168,7 @@
 
               <div class="cost-form__radio-wrapper">
                 <div class="cost-form__custom-radio">
-                  <input type="radio" name="gender" value="male" id="gender">
+                  <input type="radio" name="gender" value="male" id="gender" />
                   <div class="cost-form__svg-wrapper">
                     <svg width="44" height="64" viewBox="0 0 44 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -175,7 +184,7 @@
                   </div>
                 </div>
                 <div class="cost-form__custom-radio">
-                  <input type="radio" name="gender" value="female" id="gender">
+                  <input type="radio" name="gender" value="female" />
                   <div class="cost-form__svg-wrapper">
                     <svg width="61" height="77" viewBox="0 0 61 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -192,42 +201,6 @@
                 </div>
               </div>
             </div>
-            <!-- city -->
-            <div class="cost-form__city cost-form__item">
-              <div class="cost-form__subtitle">Город</div>
-              <div class="cost-form__status">
-                <span class="cost-form__status-text">Город</span>
-                <button class="cost-form__arrow"></button>
-              </div>
-              <div class="cost-form__checkbox-wrapper">
-                <ul>
-                  <li>
-                    <div class="cost-form__custom-checkbox">
-                      <input type="radio" value="Черкасы" name="city" id="city-1">
-                    </div>
-                    <label for="city-1">Черкасы</label>
-                  </li>
-                  <li>
-                    <div class="cost-form__custom-checkbox">
-                      <input type="radio" value="Кривой Рог" name="city" id="city-2">
-                    </div>
-                    <label for="city-2">Кривой Рог</label>
-                  </li>
-                  <li>
-                    <div class="cost-form__custom-checkbox">
-                      <input type="radio" value="Одесса" name="city" id="city-3">
-                    </div>
-                    <label for="city-3">Одесса</label>
-                  </li>
-                  <li>
-                    <div class="cost-form__custom-checkbox">
-                      <input type="radio" value="Киев" name="city" id="city-4">
-                    </div>
-                    <label for="city-4">Киев</label>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <!-- health -->
             <div class="cost-form__health cost-form__item">
               <div class="cost-form__subtitle">Состояние здоровья</div>
@@ -240,52 +213,58 @@
                 <ul>
                   <li>
                     <div class="cost-form__custom-checkbox">
-                      <input type="checkbox" name="" id="health-1">
+                      <input type="checkbox" name="health" id="health-1" value="Здоров" />
                     </div>
-                    <label for="health-1">Lorem ipsum dolor sit dolor sitdolor sit amet.</label>
+                    <label for="health-1">Здоров</label>
                   </li>
                   <li>
                     <div class="cost-form__custom-checkbox">
-                      <input type="checkbox" name="" id="health-2">
+                      <input type="checkbox" name="health" id="health-2" value="Не здоров" />
                     </div>
-                    <label for="health-2">Lorem, ipsum.</label>
+                    <label for="health-2">Не здоров</label>
                   </li>
                   <li>
                     <div class="cost-form__custom-checkbox">
-                      <input type="checkbox" name="" id="health-3">
+                      <input type="checkbox" name="health" id="health-3" value="Бывало лучше" />
                     </div>
-                    <label for="health-3">Lorem, ipsum.</label>
+                    <label for="health-3">Бывало лучше</label>
                   </li>
                   <li>
                     <div class="cost-form__custom-checkbox">
-                      <input type="checkbox" name="" id="health-4">
+                      <input type="checkbox" name="health" id="health-4" value="Приболел" />
                     </div>
-                    <label for="health-4">Lorem, ipsum.</label>
+                    <label for="health-4">Приболел</label>
                   </li>
                   <li>
                     <div class="cost-form__custom-checkbox">
-                      <input type="checkbox" name="" id="health-5">
+                      <input type="checkbox" name="health" id="health-5" value="Выздоравливает" />
                     </div>
-                    <label for="health-5">Lorem, ipsum.</label>
+                    <label for="health-5">Выздоравливает</label>
                   </li>
                 </ul>
               </div>
             </div>
-            <button type="button" class="cost-form__btn btn" data-fancybox data-src="#cost-form__form">РСЧИТАТЬ</button>
+            <button type="button" id="cost-form__calculate" class="cost-form__btn btn" data-fancybox
+              data-src="#cost-form__form">РСЧИТАТЬ</button>
           </div>
-          <div id="cost-form__form" style="display:none;">
-            <!-- phone -->
-            <div class="cost-form__phone cost-form__item">
-              <label class="cost-form__subtitle" for="phone">Телефон</label>
-              <input type="text" id="phone" placeholder="Телефон">
+
+          <div id="cost-form__form" class="callback-popup" style="display:none;">
+            <div class="callback-popup__title t3">Мы перезвоним вам<br />после обработки информации</div>
+            <div class="callback-form">
+              <textarea id="cost-form__data" style="opacity: 0;visibility: hidden;height: 0;"></textarea>
+              <div class="callback-form__item">
+                <label for="cost-form-name">Ваше имя</label>
+                <input type="text" id="cost-form-name" />
+              </div>
+              <div class="callback-form__item">
+                <label for="cost-form-phone">Ваш телефон</label>
+                <input type="text" id="cost-form-phone" />
+              </div>
+              <button type="submit" class="btn btn_2 btn_big callback-form__btn">Отправить</button>
             </div>
-            <!-- Name -->
-            <div class="cost-form__name cost-form__item">
-              <label class="cost-form__subtitle" for="name">Имя</label>
-              <input type="text" id="name" placeholder="Имя">
-            </div>
-            <button type="submit" class="cost-form__btn btn">Отправить</button>
           </div>
+
+          <!-- visible only on tablet -->
           <button type="button" class="cost-form__trigger btn">
             <svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -295,45 +274,751 @@
         </div>
       </div>
     </section>
-    <section>
+
+    <section class="what-you-get pt">
       <div class="container">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore nemo corrupti tenetur in fuga harum, pariatur
-        atque animi. Rem magnam nisi dolores quisquam recusandae sed, maxime atque. Maxime, deserunt exercitationem
-        repellat aliquam quod facilis eligendi nesciunt. Minus consequuntur corrupti magni nobis eaque explicabo nisi
-        molestiae officiis. Qui commodi sapiente nostrum neque vel reiciendis modi consequatur quos et nulla quae vero
-        magnam dolores dolor voluptates cupiditate velit, veniam ipsam numquam molestiae suscipit. Dolore itaque, a,
-        amet quis facilis officiis accusantium magnam assumenda sint ad vel et deleniti. Aspernatur debitis rem quis
-        laborum quo quaerat ipsam doloribus! Animi doloribus unde esse quos, commodi dolorem totam. Assumenda dolores
-        fuga praesentium laborum ipsam officiis eveniet cumque natus explicabo maxime. Dicta facilis perspiciatis
-        quisquam eum consectetur optio atque porro pariatur quis aliquid ratione temporibus, illum necessitatibus
-        ducimus molestiae ab veritatis id sunt quidem earum eveniet voluptate eaque numquam doloremque. Temporibus
-        corporis vitae, deleniti ipsum asperiores corrupti ex, molestiae at facilis consequatur amet provident rem
-        explicabo molestias placeat sint eius. Deleniti voluptate accusamus in recusandae natus dolores maiores vitae
-        quidem ad sit quos sint explicabo tempore illo, exercitationem aliquam reprehenderit at inventore? Deleniti
-        maxime, ea consectetur magni iste totam blanditiis voluptatem eum rem voluptates, saepe laborum quis impedit
-        aspernatur minima, perferendis ipsa consequuntur voluptatum beatae neque nam id error accusamus. Veniam sit,
-        veritatis, laborum ratione deserunt facilis nobis quos laboriosam saepe amet delectus sapiente aperiam adipisci
-        illum sequi magni excepturi ut sint fugit qui quis animi minus nam unde. Velit dolore accusantium, saepe odit
-        quibusdam illum, repellendus quam natus numquam officia quasi sunt! Enim maiores praesentium hic illo
-        dignissimos reiciendis, dolorem adipisci harum ea, laborum est. Consectetur debitis numquam nisi libero
-        aspernatur in hic pariatur quaerat, facilis dignissimos ad fuga odio consequatur suscipit. Vero minus animi
-        doloribus quae molestiae voluptates iusto optio enim, in adipisci mollitia at rem architecto, veniam error, ut
-        eveniet veritatis magni illum saepe reiciendis dolorem quasi sequi. Quasi consectetur repellendus error quaerat
-        adipisci deserunt, atque unde nam vero consequuntur, commodi, illum rem sint voluptas? Deleniti dolores libero
-        error voluptatibus animi, dignissimos voluptates quas esse eius, itaque iste expedita accusantium cupiditate
-        quam. Nihil dolorum quae ipsum, optio quia error beatae quas soluta? Tempora accusamus exercitationem quae.
-        Adipisci rerum quo qui dicta perferendis dolores vitae iste. Officiis veniam eius est. Officiis dolorem
-        cupiditate ipsum eum laborum culpa eaque minus consequuntur quidem esse, doloribus saepe suscipit, iste dolore
-        officia voluptatibus. Illum voluptate quibusdam voluptas, corporis enim recusandae quis ut est esse alias fuga
-        iure magni, dolorem mollitia numquam eius illo molestias nesciunt rerum harum. Iure quidem illo omnis dolor sunt
-        quae veniam nesciunt ad et atque laudantium, officia ratione ab repellendus ea? Beatae at molestiae veritatis
-        magnam aspernatur praesentium quae reprehenderit sequi vitae nobis. Eum earum possimus saepe molestias assumenda
-        alias eligendi, nulla esse beatae amet et in quis repudiandae, dicta quo ullam eveniet veritatis debitis harum
-        itaque mollitia aliquam quia officia dignissimos. Ratione delectus enim atque cupiditate aspernatur. Vel, ut!
-        Perferendis fugit architecto dolore quo ab sit mollitia error velit? Dignissimos totam expedita id?
+        <div class="what-you-get__preview">
+          <div class="what-you-get__title t2">
+            Санаторий для пожилых в Одессе «Солнечный Парк»
+          </div>
+          <div class="what-you-get__image">
+            <svg width="342" height="219" viewBox="0 0 342 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M341 148.12H277.613V85.461H274.671V142.567H248.394V148.119H207.018V142.171H242.316V138.8H205.254V145.933L165.184 138.597V78.8458H168.322V136.085L200.154 141.504V85.0654H201.529L201.332 99.9365H226.236V134.042H233.688V98.7471H220.941V134.24L212.512 134.306V94.3848L235.063 94.319V86.6514H210.548L210.156 136.619L237.217 136.421L236.909 71.2745L241.706 70.7891L260.672 21.8191L271.404 74.1287L260.088 69.3384L259.964 51.6252L263.363 54.0051V68.8104L253.689 64.9761L253.559 46.9989L257.742 49.778L258.108 69.9026L276.425 77.6989L263.886 12.3618L221.791 21.3476L222.509 19.5662L262.889 10.5989L240.689 68.8409L214.925 70.3759L212.409 67.7209L213.821 72.3751L225.064 71.5821L237.086 77.4016L245.973 66.563L287.023 83.4832L196.559 82.4216L182.113 85.1312L199.828 74.7558L187.213 82.6207L197.606 80.1751L211.332 65.7672L201.657 72.5362L164.073 74.1259L200.939 23.6645L220.545 19.8311L202.704 8.32927L182.899 35.4943L180.937 33.7101L200.939 6.74331L165.446 17.2521L137.6 5.55385L167.406 21.0243L184.663 40.4559L160.151 31.3302L127.756 2.40325L128.977 0.86084L156.294 24.2583V107.009L154.554 107.102V80.4058L114.197 79.9028V105.686L128.316 106.612V82.4234L116.029 82.5541L116.354 114.012L98.6418 112.561V113.883L130.932 116.328L126.123 120L90.1444 117.055L97.0651 112.696L96.9396 80.1121L105.307 78.4595L112.361 70.7928L112.098 44.6857L143.479 36.2252L143.61 54.9314L136.937 55.3946L137.077 39.3276L138.777 38.8644L138.643 60.8297L127.939 61.2678L128.318 41.5092L130.213 40.9145L130.088 56.5128L122.13 57.2131L122.249 40.2512L111.758 43.2934L104.002 43.0331L127.272 4.49593L131.971 8.14677L110.8 40.254V52.9453L86.6136 79.912H95.2419V148.122L141.857 151.228V148.742C141.857 148.022 129.906 149.415 124.063 146.148C118.22 142.88 125.241 145.111 128.779 145.111C132.316 145.111 153.945 148.376 162.249 144.023C170.553 139.67 150.785 141.656 144.842 142.692C139.833 143.565 123.656 142.934 121.043 140.602C118.429 138.269 126.27 139.047 133.19 139.824C140.11 140.602 142.419 141.141 141.802 139.047C140.879 135.92 123.608 137.545 121.059 135.434C117.198 132.238 132.336 135.504 142.263 132.514C152.323 129.485 138.709 137.871 150.857 137.715C163.005 137.559 166.405 135.166 164.406 132.441C162.407 129.717 161.484 134.942 154.206 133.707C146.073 132.324 154.137 131.08 158.99 128.731C165.446 125.605 146.564 128.791 142.211 129.492C138.321 130.117 128.987 133.603 126.527 131.012C124.066 128.421 137.906 128.385 140.058 127.315C142.21 126.244 126.527 125.414 129.602 124.377C132.678 123.34 153.488 124.792 156.359 123.859C159.229 122.926 143.749 122.099 143.749 122.099C143.749 122.099 127.962 121.684 131.038 119.505C134.113 117.326 146.415 119.505 154.923 118.572C163.431 117.64 147.183 116.551 145.595 116.349C144.006 116.147 144.594 115.336 145.119 115.272C147.684 114.961 151.796 115.986 155.692 114.69C159.587 113.394 151.202 113.693 144.569 113.446C138.057 113.204 130.418 113.147 133.354 114.874C138.257 117.759 146.26 113.558 146.885 112.796C147.639 111.869 133.129 112.219 133.857 110.387C134.819 107.966 144.942 112.274 152.877 109.883C156.393 108.823 147.491 109.182 143.544 109.084C139.597 108.987 131.085 108.054 133.498 106.758C135.911 105.462 139.459 107.265 143.201 107.213C146.942 107.161 151.732 104.191 150.447 104.301C145.273 104.743 135.394 104.893 137.906 103.597C140.418 102.301 145.556 103.347 148.003 102.405C150.515 101.437 142.776 100.923 137.906 100.608C133.037 100.293 140.024 98.9499 142.57 99.2955C143.129 99.3714 147.594 100.129 148.26 98.9842C148.926 97.8392 137.871 98.1505 137.666 96.911C137.461 95.6715 143.288 95.9781 144.569 96.03C145.851 96.0819 153.744 94.2699 144.569 94.2162C135.395 94.1624 133.323 92.5941 138.808 92.5941C144.293 92.5941 149.385 94.118 145.643 92.356C141.902 90.5941 135.24 89.639 140.393 89.1795C144.296 88.8312 141.824 87.1498 143.416 86.4754C145.008 85.801 141.907 82.8097 141.961 84.3123C142.015 85.8149 143.457 151.164 143.457 151.164H188.72L1 178.715L34.9792 197.428L203.491 152.881L213.165 157.772L215.257 157.507L207.413 151.295L273.302 148.122L310.56 162.398L233.297 168.345L216.825 159.224L70.5351 217.783"
+                stroke="#5A5A5A" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div class="what-you-get__inner">
+          <div class="what-you-get__card">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="5" fill="#1A5BE6" />
+              <path
+                d="M15.7348 25.3217C15.3602 24.9159 14.7275 24.8906 14.3217 25.2652C13.9159 25.6398 13.8906 26.2725 14.2652 26.6783L15.7348 25.3217ZM21 32.5L20.2652 33.1783C20.4459 33.374 20.6972 33.4896 20.9634 33.4993C21.2295 33.5091 21.4886 33.4122 21.6832 33.2303L21 32.5ZM37.1832 18.7303C37.5865 18.353 37.6076 17.7202 37.2303 17.3168C36.853 16.9135 36.2202 16.8924 35.8168 17.2697L37.1832 18.7303ZM14.2652 26.6783L20.2652 33.1783L21.7348 31.8217L15.7348 25.3217L14.2652 26.6783ZM21.6832 33.2303L37.1832 18.7303L35.8168 17.2697L20.3168 31.7697L21.6832 33.2303Z"
+                fill="white" />
+            </svg>
+            <div class="what-you-get__description">Профессиональный уход и забота</div>
+          </div>
+          <div class="what-you-get__card">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="5" fill="#1A5BE6" />
+              <path
+                d="M15.7348 25.3217C15.3602 24.9159 14.7275 24.8906 14.3217 25.2652C13.9159 25.6398 13.8906 26.2725 14.2652 26.6783L15.7348 25.3217ZM21 32.5L20.2652 33.1783C20.4459 33.374 20.6972 33.4896 20.9634 33.4993C21.2295 33.5091 21.4886 33.4122 21.6832 33.2303L21 32.5ZM37.1832 18.7303C37.5865 18.353 37.6076 17.7202 37.2303 17.3168C36.853 16.9135 36.2202 16.8924 35.8168 17.2697L37.1832 18.7303ZM14.2652 26.6783L20.2652 33.1783L21.7348 31.8217L15.7348 25.3217L14.2652 26.6783ZM21.6832 33.2303L37.1832 18.7303L35.8168 17.2697L20.3168 31.7697L21.6832 33.2303Z"
+                fill="white" />
+            </svg>
+            <div class="what-you-get__description">Возможность временного и постоянного проживания</div>
+          </div>
+          <div class="what-you-get__card">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="5" fill="#1A5BE6" />
+              <path
+                d="M15.7348 25.3217C15.3602 24.9159 14.7275 24.8906 14.3217 25.2652C13.9159 25.6398 13.8906 26.2725 14.2652 26.6783L15.7348 25.3217ZM21 32.5L20.2652 33.1783C20.4459 33.374 20.6972 33.4896 20.9634 33.4993C21.2295 33.5091 21.4886 33.4122 21.6832 33.2303L21 32.5ZM37.1832 18.7303C37.5865 18.353 37.6076 17.7202 37.2303 17.3168C36.853 16.9135 36.2202 16.8924 35.8168 17.2697L37.1832 18.7303ZM14.2652 26.6783L20.2652 33.1783L21.7348 31.8217L15.7348 25.3217L14.2652 26.6783ZM21.6832 33.2303L37.1832 18.7303L35.8168 17.2697L20.3168 31.7697L21.6832 33.2303Z"
+                fill="white" />
+            </svg>
+            <div class="what-you-get__description">При необходимости - поддержка ивосстановление</div>
+          </div>
+          <div class="what-you-get__card">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="5" fill="#1A5BE6" />
+              <path
+                d="M15.7348 25.3217C15.3602 24.9159 14.7275 24.8906 14.3217 25.2652C13.9159 25.6398 13.8906 26.2725 14.2652 26.6783L15.7348 25.3217ZM21 32.5L20.2652 33.1783C20.4459 33.374 20.6972 33.4896 20.9634 33.4993C21.2295 33.5091 21.4886 33.4122 21.6832 33.2303L21 32.5ZM37.1832 18.7303C37.5865 18.353 37.6076 17.7202 37.2303 17.3168C36.853 16.9135 36.2202 16.8924 35.8168 17.2697L37.1832 18.7303ZM14.2652 26.6783L20.2652 33.1783L21.7348 31.8217L15.7348 25.3217L14.2652 26.6783ZM21.6832 33.2303L37.1832 18.7303L35.8168 17.2697L20.3168 31.7697L21.6832 33.2303Z"
+                fill="white" />
+            </svg>
+            <div class="what-you-get__description">Проживание в комфортных условиях уютно как дома</div>
+          </div>
+          <div class="what-you-get__card">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="5" fill="#1A5BE6" />
+              <path
+                d="M15.7348 25.3217C15.3602 24.9159 14.7275 24.8906 14.3217 25.2652C13.9159 25.6398 13.8906 26.2725 14.2652 26.6783L15.7348 25.3217ZM21 32.5L20.2652 33.1783C20.4459 33.374 20.6972 33.4896 20.9634 33.4993C21.2295 33.5091 21.4886 33.4122 21.6832 33.2303L21 32.5ZM37.1832 18.7303C37.5865 18.353 37.6076 17.7202 37.2303 17.3168C36.853 16.9135 36.2202 16.8924 35.8168 17.2697L37.1832 18.7303ZM14.2652 26.6783L20.2652 33.1783L21.7348 31.8217L15.7348 25.3217L14.2652 26.6783ZM21.6832 33.2303L37.1832 18.7303L35.8168 17.2697L20.3168 31.7697L21.6832 33.2303Z"
+                fill="white" />
+            </svg>
+            <div class="what-you-get__description">Наличие современного европейского оборудования</div>
+          </div>
+          <div class="what-you-get__card">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="52" height="52" rx="5" fill="#1A5BE6" />
+              <path
+                d="M15.7348 25.3217C15.3602 24.9159 14.7275 24.8906 14.3217 25.2652C13.9159 25.6398 13.8906 26.2725 14.2652 26.6783L15.7348 25.3217ZM21 32.5L20.2652 33.1783C20.4459 33.374 20.6972 33.4896 20.9634 33.4993C21.2295 33.5091 21.4886 33.4122 21.6832 33.2303L21 32.5ZM37.1832 18.7303C37.5865 18.353 37.6076 17.7202 37.2303 17.3168C36.853 16.9135 36.2202 16.8924 35.8168 17.2697L37.1832 18.7303ZM14.2652 26.6783L20.2652 33.1783L21.7348 31.8217L15.7348 25.3217L14.2652 26.6783ZM21.6832 33.2303L37.1832 18.7303L35.8168 17.2697L20.3168 31.7697L21.6832 33.2303Z"
+                fill="white" />
+            </svg>
+            <div class="what-you-get__description">Здоровое и сбалансированное питание</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="callback-wrapper">
+      <section class="callback">
+        <div class="container">
+          <div class="callback__inner">
+            <div class="callback__image">
+              <img src="img/callback-image.png" alt="" />
+            </div>
+            <div class="callback__description">
+              <div class="callback__title t3  ">
+                Санаторий для пожилых в Одессе «Солнечный Парк»
+              </div>
+              <p class="callback__text">
+                Наш геронтологический санаторий в Одесской области готов предоставить уход за пожилыми украинцами в
+                медикаментозном, социальном и бытовом направлениях. Мы предлагаем следующие услуги: реабилитация после
+                перелома шейки бедра, а также после других сложных травм и переломов, реабилитация после ишемического
+                инсульта, восстановление после сложных хирургических операций и поддержка стариков, которых одолевает
+                онкологическое заболевание, сахарный диабет, остеомиелит или иная неизлечимая хворь. У нас Ваши
+                родственники будут чувствовать себя комфортно. Для этого персонал учреждения делает всё возможное.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="callback__row">
+          <div class="container">
+            <div class="callback-info">
+              <div class="callback-info__inner">
+                <p class="callback-info__text t3">
+                  24 часа в сутки и 7 дней в неделю
+                  <a href="tel:+38 (067) 153-05-05">+38 (067) 153-05-05</a>
+                </p>
+                <button type="button" class="btn btn_2 btn_big callback-info__btn" data-fancybox
+                  data-src="#callback">Заказать звонок</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="services pt">
+      <div class="container">
+        <div class="services__title t2">Наши услуги</div>
+        <div class="services__subtitle">
+          Пожилой возраст – не конец жизни, это время для активной социальной жизни и полноценного заслуженного отдыха
+          после долгих рабочих лет.
+        </div>
+        <div class="services__inner">
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-1.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-1-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за онкологическими больными</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-2.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-2-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за больными после инсульта</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-3.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-3-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за инвалидами</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-4.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-4-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Услуги сиделки</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-5.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-5-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за лежачими пожилыми</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-6.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-6-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за лежачими пожилыми с переломом шейки бедра</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-7.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-7-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за лежачими пожилыми после инфаркта</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-8.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-8-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Услуги хоспис</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-9.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-9-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Палиативная помощь</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-10.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-10-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за престарелыми</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-11.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-11-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за пожилыми с деменцией</div>
+          </div>
+
+          <div class="services__card">
+            <div class="services__icon">
+              <img class="services__icon--default" src="img/services/services-icon-12.svg" alt="" />
+              <img class="services__icon--hover" src="img/services/services-icon-12-hover.svg" alt="" />
+            </div>
+            <div class="services__description">Уход за пожилыми с альцгеймером</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="callback-v2">
+      <div class="container">
+        <div class="callback-v2__inner">
+          <div class="callback-v2__info">
+            <div class="callback-v2__title t1">Желаете получить консультацию?</div>
+            <div class="callback-v2__text t3">Оставьте заявку, и наши специалисты подберут оптимальный для вас вариант
+            </div>
+          </div>
+          <div class="callback-v2__form-wrapper">
+            <div class="callback-form">
+              <div class="callback-form__item">
+                <label for="callback-v2-name">Ваше имя</label>
+                <input type="text" id="callback-v2-name" />
+              </div>
+              <div class="callback-form__item">
+                <label for="callback-v2-phone">Ваш телефон</label>
+                <input type="text" id="callback-v2-phone" />
+              </div>
+              <button type="submit" class="btn btn_big callback-form__btn">Отправить</button>
+            </div>
+          </div>
+          <img class="callback-v2__image" src="img/callback-v2-image.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="relative-receive pt pb">
+      <div class="container">
+        <div class="relative-receive__title t2">Что получит ваш родственник?</div>
+        <div class="relative-receive__inner">
+          <div class="relative-receive__card">Строгое соблюдение медицинских назначений</div>
+          <div class="relative-receive__card">Авторское меню</div>
+          <div class="relative-receive__card">Круглосуточный уход</div>
+          <div class="relative-receive__card">Душевное тепло</div>
+          <div class="relative-receive__card">Разнообразный досуг и мероприятия</div>
+          <div class="relative-receive__card">Врачебный контроль</div>
+          <div class="relative-receive__card">Психологическая помощь</div>
+          <div class="relative-receive__card">Занятия в тренажерном зале</div>
+          <picture class="relative-receive__image">
+            <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="305.366" cy="304" rx="199" ry="198.5" fill="white" fill-opacity="0.2" />
+              <path
+                d="M561.621 300C561.621 444.975 444.489 562.5 300 562.5C155.511 562.5 38.3794 444.975 38.3794 300C38.3794 155.025 155.511 37.5 300 37.5C444.489 37.5 561.621 155.025 561.621 300ZM40.2002 300C40.2002 443.966 156.517 560.673 300 560.673C443.483 560.673 559.8 443.966 559.8 300C559.8 156.034 443.483 39.3269 300 39.3269C156.517 39.3269 40.2002 156.034 40.2002 300Z"
+                fill="#0CB0F2" />
+              <path opacity="0.08"
+                d="M309.555 459.852C390.838 459.852 456.731 393.959 456.731 312.676C456.731 231.393 390.838 165.5 309.555 165.5C228.272 165.5 162.379 231.393 162.379 312.676C162.379 393.959 228.272 459.852 309.555 459.852Z"
+                fill="#0CB0F2" />
+              <path
+                d="M307.076 189.417H306.267C305.055 189.417 304.246 188.608 304.246 187.395V160.305C304.246 159.092 305.055 158.283 306.267 158.283H307.076C308.289 158.283 309.098 159.092 309.098 160.305V187.395C309.502 188.608 308.289 189.417 307.076 189.417Z"
+                fill="#0CB0F2" />
+              <path
+                d="M307.076 472.851H306.267C305.055 472.851 304.246 472.043 304.246 470.83V443.739C304.246 442.526 305.055 441.718 306.267 441.718H307.076C308.289 441.718 309.098 442.526 309.098 443.739V470.83C309.502 472.043 308.289 472.851 307.076 472.851Z"
+                fill="#0CB0F2" />
+              <path
+                d="M144.536 313.546V312.737C144.536 311.524 145.344 310.715 146.557 310.715H173.647C174.86 310.715 175.669 311.524 175.669 312.737V313.546C175.669 314.759 174.86 315.567 173.647 315.567H146.557C145.749 315.567 144.536 314.759 144.536 313.546Z"
+                fill="#0CB0F2" />
+              <path
+                d="M437.675 313.546V312.737C437.675 311.524 438.483 310.715 439.696 310.715H466.786C467.999 310.715 468.808 311.524 468.808 312.737V313.546C468.808 314.759 467.999 315.567 466.786 315.567H439.696C438.483 315.567 437.675 314.759 437.675 313.546Z"
+                fill="#0CB0F2" />
+              <path
+                d="M300.607 539.97C168.391 539.97 61.2437 432.823 61.2437 300.607C61.2437 168.391 168.391 61.2437 300.607 61.2437C341.444 61.2437 380.26 71.3519 413.819 89.5467"
+                stroke="#0CB0F2" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M417.809 102.978C421.532 103.97 424.931 100.557 423.923 96.8382L419.401 80.1559C418.394 76.4408 413.742 75.2093 411.029 77.9393L398.869 90.173C396.158 92.9 397.411 97.5383 401.127 98.529L417.809 102.978C421.532 103.97 424.931 100.557 423.923 96.8382L419.401 80.1559C418.394 76.4408 413.742 75.2093 411.029 77.9393L398.869 90.173C396.158 92.9 397.411 97.5383 401.127 98.529L417.809 102.978Z"
+                fill="#1A5BE6" />
+              <path
+                d="M494.281 317.184C489.025 317.184 484.577 312.736 484.577 307.48C484.577 269.473 472.851 233.083 450.209 202.354L464.765 190.224C490.238 224.592 503.58 265.025 503.58 307.48C503.58 313.14 499.537 317.184 494.281 317.184Z"
+                fill="#1A5BE6" />
+              <path
+                d="M369.343 141.3C349.126 133.618 328.101 129.979 306.672 129.979C285.242 129.979 264.217 134.022 244.001 141.3L237.531 123.106C259.769 114.615 282.816 110.571 306.672 110.571C330.527 110.571 353.574 114.615 375.812 123.106L369.343 141.3Z"
+                fill="#1A5BE6" />
+              <path
+                d="M119.467 317.184C114.211 317.184 109.763 312.736 109.763 307.48C109.763 265.025 123.106 224.188 148.579 190.224L163.135 202.354C140.492 233.083 128.767 269.473 128.767 307.48C129.171 313.14 124.723 317.184 119.467 317.184Z"
+                fill="#0CB0F2" />
+              <path
+                d="M151.409 186.99C172.838 159.091 201.546 137.662 234.297 124.723L240.766 142.918C211.25 154.644 185.777 174.456 166.369 199.524L151.409 186.99Z"
+                fill="#0CB0F2" />
+              <path
+                d="M447.783 199.524C428.375 174.456 402.498 155.048 373.386 142.918L379.855 124.723C412.606 137.662 440.909 159.091 462.743 186.99L447.783 199.524Z"
+                fill="#1A5BE6" />
+              <path class="relative-receive__hour"
+                d="M314.957 239.908V300.579V310.709C314.957 311.813 314.062 312.709 312.957 312.709H307.275H306.849C305.744 312.709 304.849 311.813 304.849 310.709V239.908C304.849 238.803 303.953 237.908 302.849 237.908H301.988C300.417 237.908 299.459 236.18 300.292 234.848L308.69 221.411C309.502 220.111 311.414 220.171 312.144 221.519L319.423 234.955C320.144 236.288 319.18 237.908 317.664 237.908H316.957C315.852 237.908 314.957 238.803 314.957 239.908Z"
+                fill="#0CB0F2" />
+              <path class="relative-receive__minute"
+                d="M399.824 300.573L415.903 311.292C417.128 312.109 417.08 313.926 415.813 314.677L399.734 324.205C398.401 324.995 396.715 324.034 396.715 322.485V320.716C396.715 319.612 395.819 318.716 394.715 318.716H311.805H311.379C310.275 318.716 309.379 317.821 309.379 316.716V308.587C309.379 307.482 310.275 306.587 311.379 306.587H319.488H394.715C395.819 306.587 396.715 305.691 396.715 304.587V302.237C396.715 300.64 398.495 299.687 399.824 300.573Z"
+                fill="#0CB0F2" />
+              <path class="relative-receive__second" d="M309.475 312.5L164.379 312.5" stroke="black" stroke-width="3"
+                stroke-linecap="round" />
+              <circle cx="309.57" cy="312.691" r="13.191" fill="#1A5BE6" />
+              <circle cx="309.57" cy="312.691" r="5.27638" fill="black" />
+              <path class="relative-receive__magic-line"
+                d="M552.295 384.111C553.336 384.478 554.48 383.932 554.839 382.887C570.361 337.826 573.508 289.425 563.951 242.733C563.73 241.651 562.667 240.961 561.586 241.191L550.199 243.611C549.118 243.84 548.429 244.903 548.65 245.985C557.609 289.86 554.653 335.336 540.089 377.682C539.729 378.727 540.275 379.869 541.316 380.237L552.295 384.111Z"
+                fill="#1A5BE6" />
+            </svg>
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="team pb">
+      <div class="container ">
+        <div class="team__title t2">Наши сотрудники</div>
+        <div class="swiper team__slider">
+          <div class="swiper-wrapper">
+            <figure class="team__slide swiper-slide">
+              <picture>
+                <!-- <source srcset="img/team-1.webp" type="image/webp"> -->
+                <img src="img/team-1.jpg" alt="" />
+              </picture>
+              <figcaption>
+                <p class="team__name t3">Мария Васильевна Корж</p>
+                <p class="team__description small">Врач невролог со тажем 9 лет</p>
+              </figcaption>
+            </figure>
+
+            <figure class="team__slide swiper-slide">
+              <picture>
+                <!-- <source srcset="img/team-2.webp" type="image/webp"> -->
+                <img src="img/team-2.jpg" alt="" />
+              </picture>
+              <figcaption>
+                <p class="team__name t3">Мария Васильевна Корж</p>
+                <p class="team__description small">Врач невролог со тажем 9 лет</p>
+              </figcaption>
+            </figure>
+
+            <figure class="team__slide swiper-slide">
+              <picture>
+                <!-- <source srcset="img/team-3.webp" type="image/webp"> -->
+                <img src="img/team-3.jpg" alt="" />
+              </picture>
+              <figcaption>
+                <p class="team__name t3">Мария Васильевна Корж</p>
+                <p class="team__description small">Врач невролог со тажем 9 лет</p>
+              </figcaption>
+            </figure>
+
+            <figure class="team__slide swiper-slide">
+              <picture>
+                <!-- <source srcset="img/team-4.webp" type="image/webp"> -->
+                <img src="img/team-4.jpg" alt="" />
+              </picture>
+              <figcaption>
+                <p class="team__name t3">Мария Васильевна Корж</p>
+                <p class="team__description small">Врач невролог со тажем 9 лет</p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="routine">
+      <div class="container">
+        <div class="routine__inner">
+          <div class="routine__subtitle">Распорядок дня</div>
+          <div class="routine__title t2">Что получит ваш родственнник?</div>
+          <div class="routine__slider-wrapper">
+            <div class="routine__slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">1.</span>
+                    <span class="routine__slide-title--text">Утро.Подъём</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не
+                    ходячих подают прям в комнату и для тяжело больных помогают есть и пить.
+                  </p>
+                </div>
+
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">2.</span>
+                    <span class="routine__slide-title--text">Завтрак</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не
+                    ходячих подают прям в комнату и для тяжело больных помогают есть и пить.
+                  </p>
+                </div>
+
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">3.</span>
+                    <span class="routine__slide-title--text">Пешие прогулки и свободное время</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не
+                    ходячих подают прям в комнату и для тяжело больных помогают есть и пить.Утро начинается с подъема,
+                    зарядки и водных процедур. С помощью персонала постояльцы приводят себя в порядок: умываются,
+                    чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не ходячих подают прям в
+                    комнату и для тяжело больных помогают есть и пить.Утро начинается с подъема, зарядки и водных
+                    процедур. С помощью персонала постояльцы приводят себя в порядок: умываются, чистят зубы и
+                    принимают душ. После процедур вкусный завтрак, завтрак для не ходячих подают прям в комнату и для
+                    тяжело больных помогают есть и пить.
+                  </p>
+                </div>
+
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">4.</span>
+                    <span class="routine__slide-title--text">Пешие прогулки и свободное время 2</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не
+                    ходячих подают прям в комнату и для тяжело больных помогают есть и пить.
+                  </p>
+                </div>
+
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">5.</span>
+                    <span class="routine__slide-title--text">Обед и тихий час</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не
+                    ходячих подают прям в комнату и для тяжело больных помогают есть и пить. Утро начинается с
+                    подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя в порядок:
+                    умываются, чистят зубы и принимают душ. После процедур вкусный завтрак, завтрак для не ходячих
+                    подают прям в комнату и для тяжело больных помогают есть и пить.
+                  </p>
+                </div>
+
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">6.</span>
+                    <span class="routine__slide-title--text">Полдник.Досуг. Свободное время.</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чист
+                  </p>
+                </div>
+
+                <div class="swiper-slide routine__slide">
+                  <p class="routine__slide-title">
+                    <span class="routine__slide-title--number">7.</span>
+                    <span class="routine__slide-title--text">Ужин.Свободное время.</span>
+                  </p>
+                  <p class="routine__slide-text">
+                    Утро начинается с подъема, зарядки и водных процедур. С помощью персонала постояльцы приводят себя
+                    в порядок: умываются, чистят зубы и принимают душ. После процедур вкусн
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="routine__arrow-wrapper">
+              <div class="swiper-button-next routine__next"></div>
+              <div class="swiper-button-prev routine__prev"></div>
+            </div>
+            <div class="swiper-pagination routine__pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery pt">
+      <div class="container">
+        <div class="gallery__title t2">Галлерея</div>
+        <!-- 1 -->
+        <div class="gallery__slider gallery__slider--1">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide gallery__slide">
+                <a class="video-wrapper" href="https://www.youtube.com/embed/JMJXvsCLu6s"
+                  data-fancybox="gallery__slider--1">
+                  <picture>
+                    <!-- <source srcset="" type="image/webp"> -->
+                    <img src="//img.youtube.com/vi/JMJXvsCLu6s/maxresdefault.jpg" alt="" />
+                  </picture>
+                </a>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <picture>
+                  <!-- <source srcset="" type="image/webp"> -->
+                  <img src="img/gallery-1.jpg" alt="" data-fancybox="gallery__slider--1" />
+                </picture>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <picture>
+                  <!-- <source srcset="" type="image/webp"> -->
+                  <img src="img/gallery-2.jpg" alt="" data-fancybox="gallery__slider--1" />
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination gallery__pagination"></div>
+          <div class="swiper-button-next gallery__next btn">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 9C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7L1 9ZM16.2071 7.29289C16.5976 7.68342 16.5976 8.31658 16.2071 8.70711L9.84315 15.0711C9.45262 15.4616 8.81946 15.4616 8.42893 15.0711C8.03841 14.6805 8.03841 14.0474 8.42893 13.6569L14.0858 8L8.42893 2.34315C8.03841 1.95262 8.03841 1.31946 8.42893 0.928932C8.81946 0.538408 9.45262 0.538408 9.84315 0.928932L16.2071 7.29289ZM1 7L15.5 7V9L1 9L1 7Z"
+                fill="white" />
+            </svg>
+          </div>
+          <div class="swiper-button-prev gallery__prev btn">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 9C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7L1 9ZM16.2071 7.29289C16.5976 7.68342 16.5976 8.31658 16.2071 8.70711L9.84315 15.0711C9.45262 15.4616 8.81946 15.4616 8.42893 15.0711C8.03841 14.6805 8.03841 14.0474 8.42893 13.6569L14.0858 8L8.42893 2.34315C8.03841 1.95262 8.03841 1.31946 8.42893 0.928932C8.81946 0.538408 9.45262 0.538408 9.84315 0.928932L16.2071 7.29289ZM1 7L15.5 7V9L1 9L1 7Z"
+                fill="white" />
+            </svg>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="gallery__slider gallery__slider--2">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide gallery__slide">
+                <picture>
+                  <!-- <source srcset="" type="image/webp"> -->
+                  <img src="img/gallery-3.jpg" alt="" data-fancybox="gallery__slider--2" />
+                </picture>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <a class="video-wrapper" href="https://www.youtube.com/embed/JMJXvsCLu6s"
+                  data-fancybox="gallery__slider--2">
+                  <picture>
+                    <!-- <source srcset="" type="image/webp"> -->
+                    <img src="//img.youtube.com/vi/JMJXvsCLu6s/maxresdefault.jpg" alt="" />
+                  </picture>
+                </a>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <picture>
+                  <!-- <source srcset="" type="image/webp"> -->
+                  <img src="img/gallery-4.jpg" alt="" data-fancybox="gallery__slider--2" />
+                </picture>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <img src="img/gallery-5.jpg" alt="" data-fancybox="gallery__slider--2" />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination gallery__pagination"></div>
+          <div class="swiper-button-next gallery__next btn">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 9C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7L1 9ZM16.2071 7.29289C16.5976 7.68342 16.5976 8.31658 16.2071 8.70711L9.84315 15.0711C9.45262 15.4616 8.81946 15.4616 8.42893 15.0711C8.03841 14.6805 8.03841 14.0474 8.42893 13.6569L14.0858 8L8.42893 2.34315C8.03841 1.95262 8.03841 1.31946 8.42893 0.928932C8.81946 0.538408 9.45262 0.538408 9.84315 0.928932L16.2071 7.29289ZM1 7L15.5 7V9L1 9L1 7Z"
+                fill="white" />
+            </svg>
+          </div>
+          <div class="swiper-button-prev gallery__prev btn">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 9C0.447715 9 0 8.55228 0 8C0 7.44772 0.447715 7 1 7L1 9ZM16.2071 7.29289C16.5976 7.68342 16.5976 8.31658 16.2071 8.70711L9.84315 15.0711C9.45262 15.4616 8.81946 15.4616 8.42893 15.0711C8.03841 14.6805 8.03841 14.0474 8.42893 13.6569L14.0858 8L8.42893 2.34315C8.03841 1.95262 8.03841 1.31946 8.42893 0.928932C8.81946 0.538408 9.45262 0.538408 9.84315 0.928932L16.2071 7.29289ZM1 7L15.5 7V9L1 9L1 7Z"
+                fill="white" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seo pt">
+      <div class="container">
+        <div class="seo__text clearfix" style="--height: 300px">
+          <h2>Свежие овощи и фрукты</h2>
+          <p>
+            Поставщик свежих овощей, фруктов.Все товары и услуги нашей компании сертифицированы. Мы очень тщательно
+            подбираем ассортимент и гарантируем качество товаров. Наши партнеры известные и проверенные производители
+            из разных стран по всему миру. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rerum
+            repellendus magni corporis, optio aspernatur asperiores, inventore blanditiis incidunt numquam magnam,
+            animi pariatur eius laboriosam! Ullam ad neque necessitatibus, fugiat non reprehenderit commodi ipsa
+            facilis quas atque, voluptatum animi perspiciatis autem deleniti incidunt repudiandae reiciendis
+            consequatur nulla dolorum, sed assumenda quidem modi. Aliquid illum laudantium sunt qui ex illo
+            dignissimos perspiciatis deleniti veniam commodi veritatis modi officiis tenetur possimus magni aspernatur
+            aut, rerum est provident. Numquam, magni officia. Inventore eligendi voluptas provident officia tempore,
+            accusantium iure quis saepe incidunt adipisci tempora aliquam nemo! Eos quod molestiae, nam saepe nobis
+            dolor.
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea ipsam excepturi dignissimos ullam laboriosam
+            voluptatibus sint cupiditate rerum error nesciunt perferendis consequuntur nostrum placeat architecto
+            numquam tempore, provident reiciendis debitis amet laudantium itaque! Ab molestias debitis odio amet
+            blanditiis autem in ipsam voluptates magnam dignissimos. Voluptates recusandae doloribus est inventore,
+            obcaecati, quas exercitationem aperiam ex laboriosam totam odit, nobis fuga. Officiis, recusandae eos unde
+            ea vitae beatae dolore provident labore doloremque eaque earum quasi voluptates sequi in aut perspiciatis
+            voluptatem. Magnam, voluptas blanditiis nesciunt numquam necessitatibus, non exercitationem ducimus
+            voluptates repellendus molestias voluptatum at. Consectetur quis unde corporis repudiandae dolore sunt
+            saepe dolorem sequi natus labore. Aliquid doloribus nostrum placeat quidem repellat deserunt earum
+            corrupti eligendi non hic animi maxime velit, fugiat nulla culpa libero atque esse inventore possimus
+            reiciendis voluptates quae. Porro dolor dolorum ab magnam, hic aliquid molestiae laudantium dolores.
+            Similique aspernatur ratione inventore, ad saepe cupiditate assumenda sed fugiat. Perspiciatis, voluptas
+            illo repellendus at ipsa eaque maxime cum excepturi quae nam suscipit distinctio, placeat rerum officiis
+            id obcaecati incidunt ullam! Nemo esse fugiat harum quod omnis soluta neque sunt quidem, voluptatibus
+            iusto. Modi exercitationem quidem natus? Tempora molestias rerum porro optio! Repudiandae harum
+            consectetur fugit illum. Alias doloribus eum laborum repudiandae odio itaque non voluptatem consequuntur.
+            Provident, ab cum! Nam placeat repellat veniam nesciunt commodi, optio maxime minima molestias neque modi
+            maiores. Aliquid corporis eaque, cum amet omnis eum corrupti et architecto quisquam doloremque illo quos
+            blanditiis
+          </p>
+          <p>
+            sapiente sed nisi deleniti! Inventore ex earum, voluptates ipsam error ab labore eveniet, debitis dolore
+            obcaecati et laborum modi ipsa exercitationem doloremque iure. Accusamus illum harum quidem distinctio
+            cupiditate sint non natus accusantium explicabo recusandae ex, nemo quaerat unde veniam, minus facilis!
+            Nostrum, voluptates labore tempora ducimus impedit recusandae deleniti hic sed, quibusdam ad officia ex
+            iure, voluptatum exercitationem unde dolore aperiam inventore. Labore omnis laborum, fugiat totam dicta
+            corrupti sed quos asperiores expedita numquam exercitationem error aut soluta deserunt adipisci, eligendi
+            minima. Ut cum at iusto iste. Tempore tenetur sequi atque eligendi necessitatibus quos reiciendis culpa.
+            Tenetur nisi minus sed quasi, corporis qui velit excepturi debitis, perspiciatis quod aspernatur beatae
+            magni. Corporis eveniet nisi assumenda, esse, amet eos totam consequuntur ullam facilis sequi
+            exercitationem quos provident nostrum eum neque dolorem. Aliquam ullam aut quod commodi esse non
+            asperiores, laborum quo officiis blanditiis earum repellat sint molestias illo, possimus quasi sunt
+            doloribus necessitatibus nulla dolorum beatae a corporis consectetur. Quaerat tempore optio saepe cum
+            voluptatibus aspernatur ratione minima minus pariatur distinctio quis veniam et delectus quasi possimus,
+            nobis maxime magni accusantium rerum. Perspiciatis, commodi ratione! Et voluptas eligendi nulla aperiam,
+            saepe iste modi vero aspernatur veniam nesciunt? In at perferendis suscipit atque! Quae esse corrupti,
+            inventore fugiat provident reiciendis iure commodi iusto iste laborum voluptatum laboriosam quidem nam,
+            qui aut ad distinctio nemo amet perspiciatis maxime maiores quia quisquam eius repellendus. Eveniet
+            placeat illum corporis culpa, vero soluta aliquid porro suscipit magnam beatae omnis dignissimos quisquam.
+            Iure, repudiandae. Suscipit quisquam a doloremque nostrum magni deserunt reprehenderit architecto, est
+            quis saepe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="callback-v3">
+      <div class="container">
+        <div class="callback-v3__inner">
+          <div class="callback-v3__info">
+            <div class="callback-v3__title t1">Желаете получить консультацию?</div>
+            <div class="callback-v3__subtitle t3">Оставьте заявку, и наши специалисты подберут оптимальный для вас
+              вариант
+            </div>
+          </div>
+          <div class="callback-v3__form-wrapper">
+            <div class="callback-form">
+              <div class="callback-form__item">
+                <label for="callback-v3-name">Ваше имя</label>
+                <input type="text" id="callback-v3-name" />
+              </div>
+              <div class="callback-form__item">
+                <label for="callback-v3-phone">Ваш телефон</label>
+                <input type="text" id="callback-v3-phone" />
+              </div>
+              <button type="submit" class="btn btn_big callback-form__btn">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="last-news pt pb">
+      <div class="container">
+        <div class="last-news__title t2">Блог</div>
+        <div class="last-news__inner">
+          <div class="last-news__card">
+            <picture class="last-news__image">
+              <a href="#">
+                <!-- <source srcset="" type="image/webp"> -->
+                <img src="img/gallery-1.jpg" alt="" />
+              </a>
+            </picture>
+            <a href="#" class="last-news__card-title t3">Lorem ipsum dolor sit.</a>
+            <p class="last-news__card-text small">Lorem ipsum dolor sit amet consectetur.</p>
+            <a href="#" class="last-news__btn">Подробнее</a>
+          </div>
+
+          <div class="last-news__card">
+            <picture class="last-news__image">
+              <a href="#">
+                <!-- <source srcset="" type="image/webp"> -->
+                <img src="img/gallery-2.jpg" alt="" />
+              </a>
+            </picture>
+            <a href="#" class="last-news__card-title t3">Lorem ipsum dolor sit.</a>
+            <p class="last-news__card-text small">Lorem ipsum dolor sit amet consectetur.</p>
+            <a href="#" class="last-news__btn">Подробнее</a>
+          </div>
+
+          <div class="last-news__card">
+            <picture class="last-news__image">
+              <a href="#">
+                <!-- <source srcset="" type="image/webp"> -->
+                <img src="img/gallery-3.jpg" alt="" />
+              </a>
+            </picture>
+            <a href="#" class="last-news__card-title t3">Lorem ipsum dolor sit.</a>
+            <p class="last-news__card-text small">Lorem ipsum dolor sit amet consectetur.</p>
+            <a href="#" class="last-news__btn">Подробнее</a>
+          </div>
+
+          <div class="last-news__card">
+            <picture class="last-news__image">
+              <a href="#">
+                <!-- <source srcset="" type="image/webp"> -->
+                <img src="img/gallery-5.jpg" alt="" />
+              </a>
+            </picture>
+            <a href="#" class="last-news__card-title t3">Lorem 44ipsum dolor sit.</a>
+            <p class="last-news__card-text small">Lorem ipsum dolor 44sit amet consectetur.</p>
+            <a href="#" class="last-news__btn">Подробнее</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <div id="callback" class="callback-popup" style="display:none;">
+    <picture class="callback-popup__image">
+      <!-- <source srcset="img/logo.webp" type="image/webp"> -->
+      <img src="img/logo.png" alt="logo" />
+    </picture>
+    <div class="callback-popup__title t2">Мы вам перезвоним</div>
+    <div class="callback-form">
+      <div class="callback-form__item">
+        <label for="callback-popup-name">Ваше имя</label>
+        <input type="text" id="callback-popup-name" />
+      </div>
+      <div class="callback-form__item">
+        <label for="callback-popup-phone">Ваш телефон</label>
+        <input type="text" id="callback-popup-phone" />
+      </div>
+      <button type="submit" class="btn btn_2 btn_big callback-form__btn">Отправить</button>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>

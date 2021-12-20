@@ -1,0 +1,191 @@
+.routine
+  background-image: url('../img/routine.png')
+  background: url('../img/routine.png')left no-repeat, linear-gradient(270deg, #1A5BE5 0.88%, rgba(26, 91, 229, 0) 93.92%)
+  background-size: auto 100%
+  padding: $step_1 0 52px
+  &__inner
+    max-width: 950px
+    margin-left: auto
+  &__arrow-wrapper
+    width: 55px
+    height: 55px
+    position: absolute
+    bottom: 50px
+    left: -28px
+    z-index: 40
+    &::before
+      content: ''
+      width: 100%
+      height: 100%
+      border-radius: 50%
+      overflow: hidden
+      background-color: $main
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+  &__slider-wrapper
+    position: relative
+    display: flex
+    & .routine__prev,
+    & .routine__next
+      position: absolute
+      width: 50%
+      height: 100%
+      bottom: auto
+      right: auto
+      margin: 0
+      &::after
+        content: ''
+        width: 100%
+        height: 100%
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        background-image: url(../img/arrow.svg)
+        background-repeat: no-repeat
+        background-size: 14px
+        background-position: center
+    & .routine__prev
+      transform: rotate(180deg)
+      top: 0
+      left: 0
+    & .routine__next
+      left: 0
+      top: 0
+      left: 50%
+
+    & .swiper-pagination
+      width: calc( 950px - 420px + 15px )
+      margin-right: -15px
+      display: flex
+      flex-direction: column
+      color: $light
+      position: relative
+      bottom: auto
+      top: 50px
+      left: 0
+      &-bullet
+        border-radius: 0
+        opacity: 1
+        width: 100%
+        height: auto
+        margin: 0!important
+        background: transparent
+        border-bottom: 1px solid rgba($light, .5)
+        padding: 15px 15px
+        padding-left: 70px
+        text-align: left
+        transition: .2s
+        &-active
+          background: #1A5BE6
+          transition: .2s
+  &__slider
+    max-width: 420px
+    margin-right: auto
+    margin-left: 0
+    display: flex
+  &__subtitle,
+  &__title
+    margin-left: calc(420px + 40px)
+  &__subtitle
+    font-size: 16px
+    color: #002D8E
+    margin-bottom: 10px
+  &__title
+    color: $light
+    margin-bottom: -30px
+  &__slide
+    background-color: $light
+    padding: 32px
+    padding-top: 67px
+    color: $dark
+    font-size: 16px
+    height: 100%
+    max-height: 414px
+    position: relative
+    border-radius: $radius
+    overflow: hidden
+    &::after
+      content: ''
+      width: 100%
+      height: 30px
+      position: absolute
+      left: 0
+      bottom: 0
+      z-index: 2
+      background: linear-gradient(180deg,rgba(255,255,255,0) 0,rgba(255,255,255,0.8) 80%,#fff 100%)
+    &-title
+      font-weight: 600
+      margin-bottom: 24px
+      &--number
+        margin-right: 3px
+    &-text
+      height: 300px
+      overflow-y: scroll
+      &::-webkit-scrollbar
+        width: 4px
+        background: $light
+      &::-webkit-scrollbar-track
+        box-shadow: inset 0 0 6px rgba($light, 0.3)
+
+      &::-webkit-scrollbar-thumb
+        background: $main
+        border-radius: $radius
+@media screen and ( max-width: 1000px )
+  .routine
+    &__inner
+      margin-left: 25px
+    &__slider-wrapper
+      & .swiper-pagination
+        &-bullet
+          padding-left: 30px
+@media screen and ( max-width: 768px )
+  .routine
+    &__inner
+      margin-left: 0
+    &__slider-wrapper
+      flex-direction: column
+      & .swiper-pagination
+        width: 100%
+        margin-right: 0
+        top: 0
+        margin-top: 30px
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: row
+        column-gap: 5px
+        &-bullet
+          width: 20px
+          height: 20px
+          border: none
+          background: $main
+          opacity: 0.5
+          display: flex
+          align-items: center
+          justify-content: center
+          padding: 0
+          border-radius: 50%
+          padding: 5px
+          font-size: 12px
+          &-active
+            opacity: 1
+    &__slider
+      max-width: 100%
+    &__subtitle,
+    &__title
+      width: 100%
+      margin-left: 0
+    &__title
+      margin-bottom: 20px
+    &__arrow-wrapper
+      display: none
+    &__slide
+      max-height: initial
+    &__slide-text
+      height: max-content
+      overflow-y: auto
+    &__pagination--text
+      display: none

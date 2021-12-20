@@ -1,0 +1,49 @@
+.what-you-get
+  padding-bottom: 100px
+  &__preview
+    display: flex
+    align-items: center
+    justify-content: space-around
+  &__title
+    max-width: 580px
+  &__inner
+    display: grid
+    grid-template-columns: repeat(3, 250px)
+    justify-content: space-around
+    grid-gap: 30px
+    margin-top: $step_2 / 2
+  &__card
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+  &__description
+    margin-top: $step_3
+
+@media screen and ( max-width: 1000px )
+  .what-you-get
+    &__inner
+      grid-template-columns: repeat(3, 1fr)
+
+@media screen and ( max-width: 768px )
+  .what-you-get
+    &__inner
+      grid-template-columns: repeat(2, 1fr)
+      margin-top: $step_2
+    &__preview
+      flex-direction: column-reverse
+    &__title
+      max-width: 100%
+      margin-top: $step_2
+
+@media screen and ( max-width: 580px )
+  .what-you-get
+    &__inner
+      grid-gap: 30px 15px
+    &__title
+      text-align: center
+
+@media screen and ( max-width: 480px )
+  .what-you-get
+    &__inner
+      grid-template-columns: 100%

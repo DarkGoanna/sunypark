@@ -7,18 +7,25 @@ const menu = document.querySelector('.header__menu');
 const menuList = menu.querySelector('.menu');
 const burger = document.querySelector('.header__burger');
 const desktopBreakpoint = 768;
+const API_KEY = 'AIzaSyDWQ9VHKbmvicDUzePMB9pRT9RxotohyQ0';
+
+// фиксим проваливание блока идущего после fixed header
+function fixHeaderHeight() {
+    header.nextElementSibling.style.paddingTop = `${header.offsetHeight}px`;
+}
 
 // burger button
 burger.addEventListener('click', () => {
     burger.classList.toggle('open');
     menu.classList.toggle('open');
+    html.classList.toggle('scrollOff')
     // fixHeaderHeight();
-    menuList.classList.remove('show-sub-menu');
+    closeAllSubmenu();
 });
 
 function addMenuArrow() {
     const menuArrow = '<button type="button" class="menu__arrow"></button>';
-    menu.querySelectorAll('.menu-item-has-children').forEach(item => {
+    menu.querySelectorAll('.menu-item-has-children > a').forEach(item => {
         item.insertAdjacentHTML('beforeend', menuArrow);
     });
 }
@@ -37,18 +44,19 @@ function setIterationVar() {
 }
 
 function addButtonComeback() {
-    const comebackButton = '<button type="button" class="menu__comeback">Назад</button>';
     document.querySelectorAll('.sub-menu').forEach(submenu => {
-        submenu.insertAdjacentHTML('afterbegin', comebackButton);
+        const comebackButton = document.createElement('button');
+        comebackButton.classList.add('menu__comeback');
+        comebackButton.textContent = 'Назад';
+        comebackButton.onclick = closeAllSubmenu;
+        submenu.prepend(comebackButton)
     });
 }
 
 function setSubmenuPosition() {
     document.querySelectorAll('.sub-menu').forEach(submenu => {
-        const menuListTop = menuList.offsetTop;
         const submenuTop = submenu.parentElement.offsetTop;
-        const difference = submenuTop - menuListTop;
-        submenu.style.top = `-${difference}px`;
+        submenu.style.top = `-${submenuTop}px`;
     });
 }
 
@@ -62,9 +70,9 @@ function addEventToMenuArrow() {
     document.querySelectorAll('.menu__arrow').forEach(btn => {
         btn.addEventListener('click', e => {
             e.stopPropagation();
-            btn.closest('.menu-item-has-children').classList.toggle('open');
             // fixHeaderHeight();
             if (window.matchMedia('(max-width: 768px)').matches) {
+                btn.closest('.menu-item-has-children').classList.toggle('open');
                 menuList.classList.toggle('show-sub-menu');
             }
         }, true);
@@ -76,8 +84,8 @@ function addEventToMenuItem() {
         item.addEventListener('click', e => {
             e.stopPropagation();
             item.classList.toggle('open');
-            // fixHeaderHeight();
-            if ((window.matchMedia('(max-width: 768px)').matches)) {
+            fixHeaderHeight();
+            if ((window.matchMedia(`(max-width: ${desktopBreakpoint}px)`).matches)) {
                 menuList.classList.toggle('show-sub-menu');
             }
         }, true);
@@ -96,7 +104,7 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > desktopBreakpoint) {
         burger.classList.remove('open');
         menu.classList.remove('open');
-        // fixHeaderHeight();
+        fixHeaderHeight();
         closeAllSubmenu();
         resetSubmenuPosition();
     } else {
@@ -108,15 +116,9 @@ window.addEventListener('load', () => {
     addMenuArrow();
     addButtonComeback();
     addEventToMenuArrow();
-    addEventToMenuItem();
     setIterationVar();
     if (window.matchMedia('(max-width: 768px)').matches) setSubmenuPosition();
 });
-// fixed header
-// фиксим проваливание блока идущего после fixed header
-function fixHeaderHeight() {
-    header.nextElementSibling.style.paddingTop = `${header.offsetHeight}px`;
-}
 
 // при загрузке пересчитываем высоту header
 window.addEventListener('load', fixHeaderHeight);
@@ -171,7 +173,7 @@ function checkboxStatus(value, textOutClassName) {
 
     statusText.textContent = `${value} ${correctWord} выбрано`;
 
-    let hasChecked = value ? true : false;
+    const hasChecked = value ? true : false;
     statusText.setAttribute('data-hasChecked', hasChecked);
 }
 
@@ -195,56 +197,306 @@ function addCustomCheckbox(parent, checkboxClassName) {
 }
 addCustomCheckbox('.cost-form__health', '.cost-form__custom-checkbox');
 
-
-// change radio
-function initCustomRadio(parent, radioClassName) {
-    const radios = document.querySelectorAll(`${parent} ${radioClassName}`);
-    if (radios.length) {
-        const output = document.querySelector(`${parent} .cost-form__status-text`);
-        radios.forEach(radio => {
-            const input = radio.querySelector('input[type="radio"]');
-            input.addEventListener('change', function () {
-                if (this.checked) {
-                    output.textContent = input.value;
-                    output.setAttribute('data-hasChecked', true);
-                }
-            });
-        });
-    }
-}
-initCustomRadio('.cost-form__city', '.cost-form__custom-checkbox');
-
-
 // open/close checkbox menu
 function openCustomSelect(parent) {
     const checkboxMenu = document.querySelector(`${parent} .cost-form__checkbox-wrapper`);
     const checkboxArrow = document.querySelector(`${parent} .cost-form__arrow`);
-    document.addEventListener('click', event => {
-        const { target } = event;
+    if (checkboxMenu) {
+        document.addEventListener('click', event => {
+            const { target } = event;
 
-        if (target.classList.contains(`${parent} cost-form__checkbox-wrapper`)
-            || target.closest(`${parent} .cost-form__checkbox-wrapper`)) {
-            checkboxMenu.classList.add('open');
-            checkboxArrow.classList.add('open');
-        } else if (target.classList.contains(`${parent} cost-form__status`)
-            || target.closest(`${parent} .cost-form__status`)) {
-            checkboxMenu.classList.toggle('open');
-            checkboxArrow.classList.toggle('open');
-        } else {
-            checkboxMenu.classList.remove('open');
-            checkboxArrow.classList.remove('open');
-        }
-    });
+            if (target.classList.contains(`${parent} cost-form__checkbox-wrapper`)
+                || target.closest(`${parent} .cost-form__checkbox-wrapper`)) {
+                checkboxMenu.classList.add('open');
+                checkboxArrow.classList.add('open');
+            } else if (target.classList.contains(`${parent} cost-form__status`)
+                || target.closest(`${parent} .cost-form__status`)) {
+                checkboxMenu.classList.toggle('open');
+                checkboxArrow.classList.toggle('open');
+            } else {
+                checkboxMenu.classList.remove('open');
+                checkboxArrow.classList.remove('open');
+            }
+        });
+    }
 }
 
 // состояние зоровья
 openCustomSelect('.cost-form__health');
-// города
-openCustomSelect('.cost-form__city');
 
 // cost-form trigger
-document.querySelector('.cost-form__trigger').addEventListener('click', function () {
-    const form = this.closest('.cost-form');
-    form.classList.toggle('open');
-    this.classList.toggle('hidden');
-});
+const costFormTrigger = document.querySelector('.cost-form__trigger');
+if (costFormTrigger) {
+    costFormTrigger.addEventListener('click', function () {
+        const form = this.closest('.cost-form');
+        form.classList.toggle('open');
+        this.classList.toggle('hidden');
+    });
+}
+
+//calculate cost-form
+const calcButton = document.querySelector('#cost-form__calculate');
+if (calcButton) {
+    calcButton.addEventListener('click', () => {
+        const textarea = document.querySelector('#cost-form__data');
+        const age = document.querySelector('#age');
+        const gender = document.querySelector('input[name="gender"]:checked');
+        const checkboxes = document.querySelectorAll('.cost-form__custom-checkbox input[name="health"]:checked');
+
+        const ageResult = age.value ? age.value : null;
+        const genderResult = gender ? gender.value : null;
+        const checkboxesResult = [];
+
+        if (checkboxes.length) {
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxesResult.push(checkboxes[i].value);
+            }
+        }
+
+        textarea.value = `Возраст пациента: ${ageResult}\nПол: ${genderResult}\nСостояние здоровья: ${checkboxesResult.join('\n')}`;
+    });
+}
+
+const whatYouGetSvg = document.querySelector('.what-you-get__image svg path');
+if (whatYouGetSvg) {
+    const len = whatYouGetSvg.getTotalLength();
+    whatYouGetSvg.style.WebkitTransition = 'none';
+    whatYouGetSvg.style.strokeDasharray = len + ' ' + len;
+    whatYouGetSvg.style.strokeDashoffset = len;
+    whatYouGetSvg.getBoundingClientRect();
+    whatYouGetSvg.style.transition = whatYouGetSvg.style.WebkitTransition = 'stroke-dashoffset 5s ease-in-out';
+    whatYouGetSvg.style.strokeDashoffset = '0';
+}
+
+// team
+const teamSlider = document.querySelector('.team__slider');
+if (teamSlider) {
+    new Swiper(teamSlider, {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        pagination: {
+            el: '.team__slider .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.team__slider .swiper-button-next',
+            prevEl: '.team__slider .swiper-button-prev',
+        },
+        breakpoints: {
+            '0': {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            '580': {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            '768': {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            '1000': {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+        },
+    });
+}
+
+// routine
+const routineSlider = document.querySelector('.routine__slider');
+if (routineSlider) {
+    const routineSlidesTitle = routineSlider.querySelectorAll('.routine__slide-title--text');
+
+    new Swiper(routineSlider, {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoHeight: true,
+        pagination: {
+            el: '.routine__pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return `<span class="${className}">${(index + 1)}<span class="routine__pagination--text">. ${routineSlidesTitle[index].textContent}</span></span>`;
+            },
+        },
+        navigation: {
+            nextEl: '.routine__next',
+            prevEl: '.routine__prev',
+        }
+    });
+}
+
+// gallery sliders
+const gallerySliderWrappers = document.querySelectorAll('.gallery__slider');
+if (gallerySliderWrappers) {
+    gallerySliderWrappers.forEach(wrapper => {
+        const slider = wrapper.querySelector('.swiper');
+        const prev = wrapper.querySelector('.gallery__prev');
+        const next = wrapper.querySelector('.gallery__next');
+        const pagination = wrapper.querySelector('.gallery__pagination');
+
+        new Swiper(slider, {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: next,
+                prevEl: prev,
+            },
+            pagination: {
+                el: pagination,
+                clickable: true,
+            },
+            breakpoints: {
+                '0': {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                '580': {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                '768': {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                },
+                '1000': {
+                    spaceBetween: 30,
+                },
+            },
+        });
+    });
+}
+
+// clock
+const clockWrapper = document.querySelector('.relative-receive__inner');
+if (clockWrapper) {
+    function getAngle(event) {
+        let x, y, boxCenterX, boxCenterY, radians, angle;
+        // Helper to convert radians to degrees
+        function radToDeg(radians) {
+            return (radians * 180 / Math.PI);
+        }
+        // Calculate the center of the object
+        boxCenterX = clockWrapper.offsetLeft + clockWrapper.offsetWidth / 2;
+        boxCenterY = clockWrapper.offsetTop + clockWrapper.offsetHeight / 2;
+        // Calulate the triangle dimensions
+        x = event.pageX - boxCenterX;
+        y = boxCenterY - event.pageY;
+        // Find the angle in radians
+        radians = Math.atan(y / x);
+
+        // Correct the angle by quadrant
+        if (event.pageX < boxCenterX && boxCenterY > event.pageY) radians += Math.PI;
+        if (event.pageX < boxCenterX && boxCenterY < event.pageY) radians += Math.PI;
+        if (event.pageX > boxCenterX && boxCenterY < event.pageY) radians += Math.PI * 2;
+        // Convert the angles to degress without precision
+        angle = radToDeg(radians).toFixed(0);
+
+        return angle;
+    }
+
+    document.addEventListener('mousemove', e => {
+        if ((window.matchMedia(`(min-width: ${desktopBreakpoint}px)`).matches)) {
+            const angle = getAngle(e);
+            const clockPart = document.querySelector('.relative-receive__magic-line');
+            clockPart.style.transform = `rotate(-${angle}deg)`;
+        }
+    });
+}
+
+// btn "read more" in section seo
+if (document.querySelector('.seo')) {
+    const less = 'Свернуть';
+    const more = 'Подробнее';
+    const e = document.querySelector('.seo__text');
+    const defaultHeight = e.offsetHeight;
+    const minHeight = Number.parseInt(e.style.getPropertyValue('--height'));
+
+    if (defaultHeight > minHeight) {
+        e.parentElement.insertAdjacentHTML('beforeend', '<button type="button" class="seo__btn btn"></button>');
+        const t = document.querySelector('.seo__btn');
+
+        e.classList.add('less');
+        t.textContent = more;
+
+        t.addEventListener('click', () => {
+            e.classList.toggle('less');
+            if (e.classList.contains('less')) {
+                t.textContent = more;
+                e.style.maxHeight = `${minHeight}px`;
+            } else {
+                t.textContent = less;
+                e.style.maxHeight = `${defaultHeight + 80}px`;
+            }
+        });
+    }
+}
+
+// get video id from youtube link 
+function getVideoID(e) {
+    return e.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i)[1]
+}
+
+// video-reviews
+const videoReviews = document.querySelector('.video-reviews');
+if (videoReviews) {
+    const videos = videoReviews.querySelectorAll('.video-reviews__video');
+    if (videos.length) {
+        videos.forEach(video => {
+            const id = getVideoID(video.getAttribute('data-link'));
+            fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${API_KEY}`)
+                .then(response => response.json())
+                .then(json => {
+                    const currentVideo = json.items[0].snippet;
+                    let imageURL = `http://img.youtube.com/vi/${id}/mqdefault.jpg`;
+
+                    video.insertAdjacentHTML('beforeend', `<div class="video-reviews__image">
+                        <a href="https://www.youtube.com/embed/${id}" data-fancybox="video-reviews">
+                            <img src="${imageURL}" alt="${currentVideo.title}">
+                        </a>
+                    </div>
+                    <div class="video-reviews__name">${currentVideo.title}</div>`)
+                })
+        })
+    }
+
+    // Swiper only for mobile
+    let swiper;
+    let init = false;
+
+    function swiperMode() {
+        const mobile = window.matchMedia('(min-width: 0px) and (max-width: 580px)');
+        const sliderInSidebar = document.querySelector('.video-reviews__slider');
+
+        if (sliderInSidebar) {
+            // Enable (for mobile)
+            if (mobile.matches) {
+                if (!init) {
+                    init = true;
+                    swiper = new Swiper(sliderInSidebar, {
+                        slidesPerView: 1,
+                        loop: true,
+                        spaceBetween: 15,
+                        autoHeight: true,
+                        pagination: {
+                            el: '.video-reviews__pagination',
+                            clickable: true,
+                        },
+                    });
+                }
+            }
+            else {
+                if (swiper !== undefined) {
+                    swiper.destroy();
+                }
+                init = false;
+            }
+        }
+    }
+
+    window.addEventListener('load', swiperMode);
+    window.addEventListener('resize', swiperMode);
+}
+
+// fancubox global
+Fancybox.defaults.hideScrollbar = false; 

@@ -1,0 +1,116 @@
+.services
+  padding-bottom: 200px
+  &__title
+    margin-bottom: $step_2/2
+    text-align: center
+  &__subtitle
+    text-align: center
+    max-width: 630px
+    margin: auto
+  &__inner
+    margin-top: $step_1
+    display: grid
+    grid-template-columns: repeat(4, 260px)
+    grid-gap: $step_2
+    justify-content: center
+  &__card
+    min-height: 260px
+    background: $light
+    box-shadow: 0px 4px 4px rgba(26, 91, 229, 0.25)
+    border-radius: $radius
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    position: relative
+    cursor: pointer
+    transition: .2s
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 0
+      height: 0
+      opacity: 0
+      visibility: hidden
+      transform: translate(-50%, -50%)
+      background-color: $main
+      clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%)
+      transition: .2s
+    & *
+      position: relative
+      z-index: 1
+    &:hover
+      color: $light
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25)
+      transition: .2s
+      & .services__icon
+        &--default
+          opacity: 0
+          visibility: hidden
+          transition: .2s
+        &--hover
+          opacity: 1
+          visibility: visible
+          transition: .2s
+      &::before
+        width: 100%
+        height: 100%
+        opacity: 1
+        visibility: visible
+        animation: service-card-fill .5s ease-in
+        clip-path: polygon(45% 0, 100% 0, 100% 49%, 100% 100%, 61% 100%, 0 100%, 0 86%, 0 57%, 0 25%, 0 0)
+        transition: .2s
+  &__icon
+    position: relative
+    width: 63px
+    height: 63px
+    & img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      transition: .2s
+    &--default
+      opacity: 1
+      visibility: visible
+    &--hover
+      opacity: 0
+      visibility: hidden
+  &__description
+    margin-top: $step_2/2
+    text-align: center
+@keyframes service-card-fill
+  0%
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%)
+
+  20%
+    clip-path: polygon(52% 12%, 85% 20%, 100% 49%, 91% 85%, 61% 100%, 0 100%, 6% 78%, 16% 59%, 0 25%, 17% 6%)
+  100%
+    clip-path: polygon(45% 0, 100% 0, 100% 49%, 100% 100%, 61% 100%, 0 100%, 0 86%, 0 57%, 0 25%, 0 0)
+
+@media screen and ( max-width: 1200px )
+  .services
+    padding-bottom: 150px
+    &__inner
+      grid-template-columns: repeat(3, 1fr)
+@media screen and ( max-width: 1200px )
+  .services
+    padding-bottom: 100px
+@media screen and ( max-width: 768px )
+  .services
+    padding-bottom: 75px
+    &__inner
+      grid-template-columns: repeat(2, 1fr)
+
+@media screen and ( max-width: 480px )
+  .services
+    &__inner
+      grid-gap: 15px
+    &__card
+      min-height: 150px
+      padding: 15px
+      justify-content: start
