@@ -6,6 +6,7 @@ const convert = require('gulp-sass');
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
+const minifyCSS = require('gulp-minify-css');
 const imagemin = require('gulp-imagemin');
 const webp = require('imagemin-webp');
 const del = require('del');
@@ -23,6 +24,9 @@ function styles() {
     return src('app/sass/style.sass')
         .pipe(convert({ outputStyle: 'compressed' }))
         .pipe(concat('style.min.css'))
+        .pipe(minifyCSS({
+            keepBreaks: true
+        }))
         .pipe(gcmq())
         .pipe(postcss([autoprefixer({
             grid: true,
@@ -58,7 +62,7 @@ function images() {
         .pipe(dest('dist/img'))
 }
 function webpConvert() {
-    return src('app/img/**/*')
+    return src('app/img/*.{jpg, png, jpeg, gif}')
         .pipe(imagemin([webp({ quality: 75, }),]))
         .pipe(rename({ extname: '.webp', }))
         .pipe(dest('app/img'))
@@ -86,4 +90,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 
 exports.build = series(cleanDist, images, build);
-exports.default = parallel(scripts, styles, webpConvert, watching, browsersync);
+exports.default = parallel(scripts, styles, watching, browsersync);

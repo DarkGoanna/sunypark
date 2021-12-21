@@ -73,6 +73,7 @@ function addEventToMenuArrow() {
             // fixHeaderHeight();
             if (window.matchMedia('(max-width: 768px)').matches) {
                 btn.closest('.menu-item-has-children').classList.toggle('open');
+<<<<<<< HEAD
                 menuList.classList.toggle('show-sub-menu');
             }
         }, true);
@@ -86,6 +87,8 @@ function addEventToMenuItem() {
             item.classList.toggle('open');
             fixHeaderHeight();
             if ((window.matchMedia(`(max-width: ${desktopBreakpoint}px)`).matches)) {
+=======
+>>>>>>> 39ff2835faf7dc39b5e5d899472d5733a86fa7e6
                 menuList.classList.toggle('show-sub-menu');
             }
         }, true);
@@ -119,6 +122,15 @@ window.addEventListener('load', () => {
     setIterationVar();
     if (window.matchMedia('(max-width: 768px)').matches) setSubmenuPosition();
 });
+<<<<<<< HEAD
+=======
+
+// fixed header
+// фиксим проваливание блока идущего после fixed header
+function fixHeaderHeight() {
+    header.nextElementSibling.style.paddingTop = `${header.offsetHeight}px`;
+}
+>>>>>>> 39ff2835faf7dc39b5e5d899472d5733a86fa7e6
 
 // при загрузке пересчитываем высоту header
 window.addEventListener('load', fixHeaderHeight);
@@ -134,6 +146,7 @@ let prevScrollPosition = window.pageYOffset;
 window.addEventListener('scroll', () => {
     const heightOfFirstPart = window.innerWidth > desktopBreakpoint ? headerRow_1.offsetHeight
         : document.querySelector('.header').offsetHeight;
+
     const currentScrollPosition = window.pageYOffset;
     if (prevScrollPosition > currentScrollPosition) {
         header.style.top = '0';

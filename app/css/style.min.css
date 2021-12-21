@@ -88,18 +88,6 @@ h3 {
   color: #fff;
 }
 
-.btn_3 {
-  border-color: #FEB526;
-  background: #FEB526;
-  color: #fff;
-}
-
-.btn_3:hover,
-.btn_3:active {
-  background: #fff;
-  color: #FEB526;
-}
-
 .container {
   max-width: 1260px;
   width: 100%;
