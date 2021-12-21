@@ -931,6 +931,10 @@ textarea::placeholder {
   padding: 100px 0;
 }
 
+.callback-wrapper .callback__image {
+  margin-bottom: 0;
+}
+
 .callback {
   background-color: #1A5BE5;
   color: #fff;
@@ -989,6 +993,10 @@ textarea::placeholder {
   right: -17px;
   z-index: 3;
   pointer-events: none;
+}
+
+.callback__image--without-blur::before {
+  content: none;
 }
 
 .callback__image--person {
@@ -1701,6 +1709,11 @@ textarea::placeholder {
 
 .gallery__pagination {
   display: none !important;
+}
+
+.gallery--grid .gallery__title {
+  text-align: left;
+  margin-bottom: 40px;
 }
 
 .gallery--grid .gallery__inner {
@@ -2791,6 +2804,10 @@ textarea::placeholder {
     justify-content: space-between;
   }
 
+  .header__menu .menu li {
+    text-transform: uppercase;
+  }
+
   .header__menu .menu>li {
     padding: 10px 0;
   }
@@ -2829,7 +2846,7 @@ textarea::placeholder {
   .header__menu .menu>li.menu-item-has-children .sub-menu a {
     font-size: 14px;
     font-weight: 500;
-    text-transform: lowercase;
+    text-transform: uppercase;
   }
 
   .header__menu .menu>li.menu-item-v1 .sub-menu {

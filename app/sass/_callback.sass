@@ -3,6 +3,8 @@
   overflow: hidden
   &--fill
     padding: 100px 0
+  & .callback__image
+    margin-bottom: 0
 .callback
   background-color: $main
   color: $light
@@ -48,6 +50,9 @@
       right: -17px
       z-index: 3
       pointer-events: none
+    &--without-blur
+      &::before
+        content: none
     &--person
       margin-bottom: 0
       margin-top: -100px
